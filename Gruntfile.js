@@ -36,7 +36,8 @@ module.exports = function(grunt) {
           files: 'src/index.pug',
           tasks: ['pug']
         }
-      }
+      },
+
   });
 
 
