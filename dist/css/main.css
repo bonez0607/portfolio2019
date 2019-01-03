@@ -1,0 +1,253 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v4.0 | 20180602
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700,800");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block; }
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.dot {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  position: absolute; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+nav {
+  display: flex;
+  position: sticky;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: #070b25;
+  height: 10vh;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0 1.618034em; }
+  nav .logo {
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 700;
+    flex: 1 1 75%; }
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 1 25%; }
+    nav ul li {
+      flex: 1 1 5%;
+      text-align: center;
+      margin: 0 15px; }
+    nav ul:before {
+      content: "";
+      display: block;
+      flex: 1 1 75%; }
+
+.slide {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr repeat(11, 1fr);
+  grid-template-columns: 1fr repeat(11, 1fr); }
+  .slide iframe {
+    height: 94vh; }
+
+.slide-home {
+  height: 90vh;
+  overflow: hidden;
+  background-color: #070b25; }
+  .slide-home .name {
+    grid-column: 1/4;
+    grid-row: -4/-1;
+    align-self: end;
+    letter-spacing: -20px;
+    z-index: 1; }
+    .slide-home .name .first:before, .slide-home .name .last:before {
+      display: block;
+      position: absolute;
+      color: #00ff78;
+      transform: translate(10px, 10px);
+      z-index: -1; }
+    .slide-home .name .first {
+      display: block;
+      transform: translateX(-15px); }
+      .slide-home .name .first:before {
+        content: "JOE"; }
+    .slide-home .name .last {
+      display: block;
+      transform: translateX(-20px); }
+      .slide-home .name .last:before {
+        content: "BANEGAS"; }
+  .slide-home .intro {
+    box-sizing: border-box;
+    grid-column: 7/-2;
+    grid-row: 3/6;
+    align-self: start;
+    background-color: #fd0691;
+    padding: 1em;
+    position: relative; }
+    .slide-home .intro:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 48px solid #fd0691;
+      border-right: 0px solid transparent;
+      border-bottom: 50px solid transparent;
+      border-left: 98px solid transparent;
+      right: 25px;
+      bottom: -35%;
+      transform: skew(30deg); }
+
+.slide-web {
+  display: flex;
+  flex-flow: column;
+  background-color: #070b25;
+  overflow-y: hidden;
+  padding: 0.6180339845em 0; }
+  .slide-web .images {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .slide-web .images li {
+      display: block;
+      flex: 0 0 25%;
+      width: auto;
+      box-sizing: border-box;
+      padding: 0.6180339845em 0.6180339845em 0.6180339845em 0; }
+      .slide-web .images li:first-child {
+        padding-left: 0.6180339845em; }
+      .slide-web .images li img {
+        height: 85vh; }
+
+.slide-photography {
+  display: flex;
+  flex-flow: column;
+  background-color: #00ff78;
+  overflow-y: hidden;
+  padding: 0.6180339845em 0; }
+  .slide-photography .images {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .slide-photography .images li {
+      display: block;
+      flex: 0 0 25%;
+      width: auto;
+      box-sizing: border-box;
+      padding: 0.6180339845em 0.6180339845em 0.6180339845em 0; }
+      .slide-photography .images li:first-child {
+        padding-left: 0.6180339845em; }
+      .slide-photography .images li img {
+        height: 85vh; }
+
+.slide-design {
+  display: flex;
+  flex-flow: column;
+  background-color: #fd0691;
+  overflow-y: hidden;
+  padding: 0.6180339845em 0; }
+  .slide-design .images {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .slide-design .images li {
+      display: block;
+      flex: 0 0 25%;
+      width: auto;
+      box-sizing: border-box;
+      padding: 0.6180339845em 0.6180339845em 0.6180339845em 0; }
+      .slide-design .images li:first-child {
+        padding-left: 0.6180339845em; }
+      .slide-design .images li img {
+        height: 85vh; }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html {
+  font-family: 'Oswald', sans-serif;
+  color: white; }
+
+h1 {
+  font-size: 17.9442726586em;
+  line-height: .8em;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700; }
+
+h2 {
+  font-size: 6.8541021569em;
+  line-height: .8em;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700; }
+
+nav {
+  font-size: 1.618034em;
+  font-weight: 200; }
+
+.intro {
+  font-weight: 200;
+  font-size: 2.6180340252em; }
+
+p.position {
+  color: #fd3633;
+  padding: 0;
+  margin: 0; }
+
+/*# sourceMappingURL=main.css.map */

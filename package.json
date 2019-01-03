@@ -1,0 +1,29 @@
+{
+  "name": "jb-portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio",
+  "private": true,
+  "dependencies": {
+    "grunt": "^1.0.3",
+    "grunt-init": "^0.3.2",
+    "npm": "^6.5.0",
+    "pug": "^2.0.3",
+    "reset-css": "^4.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-pug": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.0.2",
+    "gsap": "^2.0.2",
+    "load-grunt-tasks": "^4.0.0",
+    "modularscale-sass": "^3.0.8",
+    "node-sass": "^4.11.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph Banegas",
+  "license": "ISC"
+}

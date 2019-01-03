@@ -1,0 +1,161 @@
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	display: flex;
+	position: sticky;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	background-color: $dark;
+	height: 10vh;
+	box-sizing: border-box;
+	align-items: center;
+	padding: 0 ms(1);
+
+	.logo {
+		text-transform: uppercase;
+		font-size: ms(0);
+		font-weight: 700;
+		flex: 1 1 75%;
+
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-flow: row nowrap;
+		flex: 1 1 25%;
+
+		li{
+			flex: 1 1 5%;
+			text-align: center;
+			margin: 0 15px;
+		}
+		&:before{
+			content: "";
+			display: block;
+			flex: 1 1 75%;
+		}
+	}
+}
+
+.slide{
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr repeat(11, 1fr);
+	grid-template-columns: 1fr repeat(11, 1fr);
+
+	iframe{
+		height: 94vh;
+	}
+}
+
+.slide-home{
+	height: 90vh;
+	overflow: hidden;
+	background-color: $dark;
+	.name{
+	grid-column: 1/4;
+	grid-row: -4/-1;
+	align-self: end;
+	//transform: translateY(5%);
+	letter-spacing: -20px;
+	z-index: 1;
+
+	.first, .last{
+		&:before{
+			display: block;
+			position: absolute;
+			color: $green;
+			transform: translate(10px, 10px);
+			z-index: -1
+		}
+	}
+
+	.first{
+		display: block;
+		transform: translateX(-15px);
+		&:before{
+			content: "JOE"
+		}
+	}
+	.last{
+		display: block;
+		transform: translateX(-20px);
+			&:before{
+			content: "BANEGAS"
+		}
+	}
+}
+
+.intro{
+	box-sizing: border-box;
+	grid-column: 7/-2;
+	grid-row: 3/6;
+	align-self: start;
+	background-color: $pink;
+	padding: ms(0);
+	position: relative;
+	&:after{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-top: 48px solid #fd0691;
+		border-right: 0px solid transparent;
+		border-bottom: 50px solid transparent;
+		border-left: 98px solid transparent;
+		right: 25px;
+		bottom: -35%;		
+		transform: skew(30deg);
+	}
+}
+}
+
+@mixin photoSlide($bkg-color){
+	display: flex;
+	flex-flow: column;
+	background-color: $bkg-color;
+	overflow-y: hidden;
+	padding: ms(-1) 0;
+
+	.images{
+		display: flex;
+		flex-flow: row nowrap;
+		overflow-x: auto;
+    	overflow-y: hidden;
+
+		li{
+			display: block;
+			flex: 0 0 25%;
+			width: auto;
+			box-sizing:border-box;
+			padding: ms(-1) ms(-1) ms(-1) 0 ;
+			&:first-child{
+				padding-left: ms(-1);
+			}
+			img{
+				height: 85vh;
+			}
+		}
+	}
+}
+
+.slide-web {
+	@include photoSlide($dark);
+}
+
+.slide-photography {
+	@include photoSlide($green);
+}
+
+.slide-design {
+	@include photoSlide($pink);
+}
+
+
+
