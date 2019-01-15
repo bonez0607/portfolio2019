@@ -69,6 +69,8 @@ module.exports = function(grunt) {
             'dist/webinar-library.html': ['src/webinar-library.pug'],
             'dist/html-email-template.html': ['src/html-email-template.pug'],
             'dist/pollinator-newsletter.html': ['src/pollinator-newsletter.pug'],
+            'dist/wildlife-newsletter.html': ['src/wildlife-newsletter.pug'],
+            'dist/agroforestry-notes.html': ['src/agroforestry-notes.pug'],
           
         }
       }
