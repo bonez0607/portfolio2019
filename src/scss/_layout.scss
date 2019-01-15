@@ -31,25 +31,7 @@ body{
 	width: 80vw;
 }
 
-nav{
-	grid-column: 1/-1;
-	grid-row: 2/3;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	ul{
-		display: flex;
-		flex-flow: row nowrap;
-		flex-grow: 0;
-		flex-shrink: 1;
-		justify-content: space-between;
-		align-items: center;
-		li{
-			flex-shrink: 0;
-			margin-right: ms(-1);
-		}
-	}
-}
+
 
 .hero{
 	display: grid;
@@ -70,19 +52,14 @@ nav{
 	align-self: end;
 }
 
-ul.nav-btns{
-	flex-basis: 35%;
-}
 
-ul.profiles {
-	flex-basis: 10%;
-}
 
 .projects {
 	display: flex;
 	flex-flow: row wrap;
 	padding: 0 ms(4);
 	margin-top: ms(4);
+	justify-content: center;
 
 	.project {
 		padding: ms(2);
@@ -112,6 +89,7 @@ ul.profiles {
 			background: radial-gradient(rgba(255,255,255, 0.2) 0%,rgba(255,255,255, 0) 100%);
 			z-index: -1;
 		}
+
 	}
 }
 
@@ -151,14 +129,17 @@ ul.profiles {
 .half{
 	display: flex;
 	flex-flow: column nowrap;
-	flex-basis: 500px;
+	flex-basis: 50%;
 	align-items: stretch;
 	flex-shrink: 1;
 	flex-grow: 0;
+	min-width: 400px;
 	div{
 		flex-basis: 50%;
 		min-height: 50vh;
 	}
+
+
 
 	.subtitle{
 		flex-basis: 25%;
@@ -170,6 +151,7 @@ ul.profiles {
 
 	.one{
 		@include webProjectTile("", $red, auto 100%);
+		
 	}
 
 	.two{
@@ -189,7 +171,7 @@ ul.profiles {
 	}
 
 	.wildlife{
-		@include webProjectTile("../final-products/wildlife-pub/wildlife-cover.jpg", $purple, contain)
+		@include webProjectTile("../final-products/wildlife-pub/wildlife-cover.jpg", $purple, contain);
 	}
 }
 
@@ -292,29 +274,12 @@ footer{
 	border-top: 1px solid $lavendar;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 75px 1fr 25px;
-	.logo, ul.nav-btns, .copyright{
-		grid-row: 1/2;
-		align-self: center;
-	}
-
-	.logo{
-		grid-column: 1/2;
-	}
-
-	ul{
-		list-style: none;
-		margin: 0;
-	}
+	
 
 	p{
 		margin:0;
 		padding: 0;
 		line-height: ms(2);
-	}
-	ul.nav-btns{
-		grid-column: 2/-3;
-		display: flex;
-		justify-content: space-between;
 	}
 
 	.copyright {
