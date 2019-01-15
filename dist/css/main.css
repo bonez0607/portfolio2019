@@ -105,7 +105,8 @@ body {
   display: flex;
   flex-flow: row wrap;
   padding: 0 3.160493824rem;
-  margin-top: 3.160493824rem; }
+  margin-top: 3.160493824rem;
+  justify-content: center; }
   .projects .project {
     padding: 1.7777777769rem;
     display: flex;
@@ -136,11 +137,8 @@ body {
   flex-basis: 50%;
   align-items: stretch;
   flex-shrink: 1;
-  flex-grow: 0; }
-  .half:before {
-    content: '';
-    display: table;
-    padding-top: 100%; }
+  flex-grow: 0;
+  min-width: 400px; }
   .half div {
     flex-basis: 50%;
     min-height: 50vh; }

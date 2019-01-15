@@ -71,6 +71,7 @@ module.exports = function(grunt) {
             'dist/pollinator-newsletter.html': ['src/pollinator-newsletter.pug'],
             'dist/wildlife-newsletter.html': ['src/wildlife-newsletter.pug'],
             'dist/agroforestry-notes.html': ['src/agroforestry-notes.pug'],
+            'dist/about.html': ['src/about.pug'],
           
         }
       }
