@@ -32,6 +32,17 @@ body{
 }
 
 
+.home.hero {
+	img {
+		display: block;
+		position:absolute;
+		right:0;
+		top: 0;
+		height: 100vh;
+		width: auto;
+		z-index: -1;
+	}
+}
 
 .hero{
 	display: grid;
@@ -93,8 +104,6 @@ body{
 	}
 }
 
-
-
 @mixin webProjectTile($url, $color, $size){
 		position: relative;
 		&:before{
@@ -126,6 +135,9 @@ body{
 		}
 }
 
+
+
+
 .half{
 	display: flex;
 	flex-flow: column nowrap;
@@ -139,8 +151,6 @@ body{
 		min-height: 50vh;
 	}
 
-
-
 	.subtitle{
 		flex-basis: 25%;
 	}
@@ -151,7 +161,6 @@ body{
 
 	.one{
 		@include webProjectTile("", $red, auto 100%);
-		
 	}
 
 	.two{
@@ -171,7 +180,7 @@ body{
 	}
 
 	.wildlife{
-		@include webProjectTile("../final-products/wildlife-pub/wildlife-cover.jpg", $purple, contain);
+		@include webProjectTile("../final-products/wildlife-pub/wildlife-cover.png", $purple, contain);
 	}
 }
 
@@ -334,67 +343,7 @@ footer{
 	}
 }
 
-@mixin btn($color, $hover-color){
-	background: rgba($color, 0.1);
-	border: none;
-	border-bottom: 2px solid $color;
-	color: $color;
-	display: block;
-	font-size: ms(0);
-	margin-top: ms(0);
-	max-width: 180px;
-	padding: ms(-1) ms(3);
-	position: relative;
-	text-decoration: none;
-	transition: all .2s ease-in;
-	overflow: hidden;
-	z-index: 2;
 
-	&:before{
-	    content: "";
-	    background: $mid-purple;
-	    display: block;
-	    position: absolute;
-	    top:0;
-	    left:0;
-	    right:0;
-	    bottom:0;
-	    height: 300px;
-	    transform: rotate(45deg) translate(-100%, 100%);
-	    transition: all .3s ease-in;
-	    z-index: -1;
-	 }
-
-	&:after{
-		content: "";
-		display: inline-block;
-		position: relative;
-		width: 0;
-		height: 0;
-		border-top: 5px solid transparent;
-  		border-bottom: 5px solid transparent;
-  		border-left: 5px solid $color;
-  		transform: translateX(20px);
-	}
-
-	&:hover {
-		color: $hover-color;
-		border-bottom: 2px solid $orange;
-		transition: all .3s ease-out;
-	    &:before{
-	      transform: rotate(45deg) translate(-50%, -35%);
-	      transition: all .2s ease-out;
-	    }
-  	}
-}
-
-button.white, a.white {
-	@include btn($white, $white);
-}
-
-a.btn.purple {
-	@include btn($mid-purple, $white);
-}
 
 blockquote{
 	background: $gradient-purple;

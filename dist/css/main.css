@@ -58,6 +58,100 @@ table {
   background: red;
   position: absolute; }
 
+button.white, a.white {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff !important;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  margin-top: 1rem;
+  max-width: 200px;
+  padding: 0.7500000002rem 2.3703703686rem;
+  position: relative;
+  text-decoration: none;
+  transition: all .2s ease-in;
+  overflow: hidden;
+  z-index: 2; }
+  button.white:before, a.white:before {
+    content: "";
+    background: #1f2e98;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 300px;
+    transform: rotate(45deg) translate(-50%, 120%);
+    transition: all .3s ease-in;
+    z-index: -1; }
+  button.white:after, a.white:after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #ffffff;
+    transform: translateX(20px); }
+  button.white:hover, a.white:hover {
+    color: #ffffff !important;
+    border-bottom: 2px solid #fe9b00;
+    transition: all .3s ease-out; }
+    button.white:hover:before, a.white:hover:before {
+      transform: rotate(45deg) translate(-50%, -35%);
+      transition: all .2s ease-out; }
+
+button.btn.purple, a.btn.purple {
+  background: rgba(31, 46, 152, 0.1);
+  border: none;
+  border-bottom: 2px solid #1f2e98;
+  color: #1f2e98 !important;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  margin-top: 1rem;
+  max-width: 200px;
+  padding: 0.7500000002rem 2.3703703686rem;
+  position: relative;
+  text-decoration: none;
+  transition: all .2s ease-in;
+  overflow: hidden;
+  z-index: 2; }
+  button.btn.purple:before, a.btn.purple:before {
+    content: "";
+    background: #1f2e98;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 300px;
+    transform: rotate(45deg) translate(-50%, 120%);
+    transition: all .3s ease-in;
+    z-index: -1; }
+  button.btn.purple:after, a.btn.purple:after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #1f2e98;
+    transform: translateX(20px); }
+  button.btn.purple:hover, a.btn.purple:hover {
+    color: #ffffff !important;
+    border-bottom: 2px solid #fe9b00;
+    transition: all .3s ease-out; }
+    button.btn.purple:hover:before, a.btn.purple:hover:before {
+      transform: rotate(45deg) translate(-50%, -35%);
+      transition: all .2s ease-out; }
+
 * {
   box-sizing: border-box; }
 
@@ -84,6 +178,15 @@ img {
 
 body {
   width: 80vw; }
+
+.home.hero img {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  z-index: -1; }
 
 .hero {
   display: grid;
@@ -291,7 +394,7 @@ body {
     .half .wildlife:after {
       content: "";
       display: block;
-      background-image: url("../final-products/wildlife-pub/wildlife-cover.jpg");
+      background-image: url("../final-products/wildlife-pub/wildlife-cover.png");
       background-size: contain;
       position: absolute;
       top: 0;
@@ -416,98 +519,6 @@ footer {
       footer .contact p a {
         margin-top: 1rem;
         display: block; }
-
-button.white, a.white {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-bottom: 2px solid #ffffff;
-  color: #ffffff;
-  display: block;
-  font-size: 1rem;
-  margin-top: 1rem;
-  max-width: 180px;
-  padding: 0.7500000002rem 2.3703703686rem;
-  position: relative;
-  text-decoration: none;
-  transition: all .2s ease-in;
-  overflow: hidden;
-  z-index: 2; }
-  button.white:before, a.white:before {
-    content: "";
-    background: #1f2e98;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 300px;
-    transform: rotate(45deg) translate(-100%, 100%);
-    transition: all .3s ease-in;
-    z-index: -1; }
-  button.white:after, a.white:after {
-    content: "";
-    display: inline-block;
-    position: relative;
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid #ffffff;
-    transform: translateX(20px); }
-  button.white:hover, a.white:hover {
-    color: #ffffff;
-    border-bottom: 2px solid #fe9b00;
-    transition: all .3s ease-out; }
-    button.white:hover:before, a.white:hover:before {
-      transform: rotate(45deg) translate(-50%, -35%);
-      transition: all .2s ease-out; }
-
-a.btn.purple {
-  background: rgba(31, 46, 152, 0.1);
-  border: none;
-  border-bottom: 2px solid #1f2e98;
-  color: #1f2e98;
-  display: block;
-  font-size: 1rem;
-  margin-top: 1rem;
-  max-width: 180px;
-  padding: 0.7500000002rem 2.3703703686rem;
-  position: relative;
-  text-decoration: none;
-  transition: all .2s ease-in;
-  overflow: hidden;
-  z-index: 2; }
-  a.btn.purple:before {
-    content: "";
-    background: #1f2e98;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 300px;
-    transform: rotate(45deg) translate(-100%, 100%);
-    transition: all .3s ease-in;
-    z-index: -1; }
-  a.btn.purple:after {
-    content: "";
-    display: inline-block;
-    position: relative;
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid #1f2e98;
-    transform: translateX(20px); }
-  a.btn.purple:hover {
-    color: #ffffff;
-    border-bottom: 2px solid #fe9b00;
-    transition: all .3s ease-out; }
-    a.btn.purple:hover:before {
-      transform: rotate(45deg) translate(-50%, -35%);
-      transition: all .2s ease-out; }
 
 blockquote {
   background: linear-gradient(135deg, #6b86ff -80%, #0e1443 180%);
@@ -699,5 +710,26 @@ footer ul.nav-btns {
   grid-column: 2/-3;
   display: flex;
   justify-content: space-between; }
+
+form {
+  display: flex;
+  flex-flow: row wrap; }
+  form label {
+    margin-top: 1.333333333rem;
+    flex-basis: 100%;
+    font-size: 1.333333333rem; }
+  form input, form textarea {
+    flex-basis: 100%;
+    font-size: 1.333333333rem;
+    padding: 0.1779785159rem;
+    font-weight: 300; }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  h1 {
+    font-size: 5.6186556843rem; }
+  .half {
+    flex-grow: 1 !important; }
+    .half div {
+      min-height: 100vw !important; } }
 
 /*# sourceMappingURL=main.css.map */
