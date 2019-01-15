@@ -1,0 +1,506 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v4.0 | 20180602
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700,800");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block; }
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.dot {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  position: absolute; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #070b25; }
+
+nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100% !important;
+  height: 10vh;
+  z-index: 9999;
+  background-color: #070b25; }
+  nav .logo {
+    flex: 1 0 50%;
+    padding-left: 15px; }
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 5%; }
+    nav ul li {
+      flex: 1 1 100%; }
+      nav ul li a {
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+        transition: border .2s; }
+        nav ul li a:hover {
+          border-bottom: 3px solid #00ff78; }
+
+.slide {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr repeat(11, 1fr);
+  grid-template-columns: 1fr repeat(11, 1fr);
+  position: relative; }
+  .slide:after {
+    content: "";
+    background: url("../../assets/wild-sea.png");
+    filter: grayscale(100%);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+
+.parallax {
+  width: 100vw; }
+
+.slide-home {
+  background-color: #070b25;
+  overflow: hidden;
+  z-index: -1; }
+  .slide-home .page-title {
+    grid-column: 1/4;
+    grid-row: -4/-1;
+    align-self: end;
+    letter-spacing: -20px;
+    z-index: 1; }
+    .slide-home .page-title .first:before, .slide-home .page-title .last:before {
+      display: block;
+      position: absolute;
+      color: #00ff78;
+      transform: translate(10px, 10px);
+      z-index: -1;
+      opacity: .85; }
+    .slide-home .page-title .first {
+      display: block;
+      transform: translateX(-15px); }
+      .slide-home .page-title .first:before {
+        content: "JOE"; }
+    .slide-home .page-title .last {
+      display: block;
+      transform: translateX(-20px); }
+      .slide-home .page-title .last:before {
+        content: "BANEGAS"; }
+  .slide-home .intro {
+    box-sizing: border-box;
+    grid-column: 7/-2;
+    grid-row: 3/6;
+    align-self: start;
+    background-color: #fd0691;
+    padding: 1em;
+    position: relative; }
+    .slide-home .intro:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 48px solid #fd0691;
+      border-right: 0px solid transparent;
+      border-bottom: 50px solid transparent;
+      border-left: 98px solid transparent;
+      right: 25px;
+      bottom: -35%;
+      transform: skew(30deg); }
+
+.slide-web {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #192279;
+  padding: 0.6180339845em 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 1; }
+  .slide-web h2 {
+    display: block;
+    height: auto;
+    font-size: 10vw; }
+  .slide-web .images {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .slide-web .images li {
+      display: block;
+      flex: 0 1 25%;
+      width: auto;
+      box-sizing: border-box;
+      padding: 0.6180339845em 0.6180339845em 0.6180339845em 0; }
+      .slide-web .images li:first-child {
+        padding-left: 0.6180339845em; }
+      .slide-web .images li img {
+        height: 50vh; }
+      .slide-web .images li .cp_embed_wrapper {
+        width: 50vw; }
+        .slide-web .images li .cp_embed_wrapper iframe {
+          height: 50vh; }
+
+.slide-design {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #fd0691;
+  padding: 0.6180339845em 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 1; }
+  .slide-design h2 {
+    display: block;
+    height: auto;
+    font-size: 10vw; }
+  .slide-design .images {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .slide-design .images li {
+      display: block;
+      flex: 0 1 25%;
+      width: auto;
+      box-sizing: border-box;
+      padding: 0.6180339845em 0.6180339845em 0.6180339845em 0; }
+      .slide-design .images li:first-child {
+        padding-left: 0.6180339845em; }
+      .slide-design .images li img {
+        height: 50vh; }
+      .slide-design .images li .cp_embed_wrapper {
+        width: 50vw; }
+        .slide-design .images li .cp_embed_wrapper iframe {
+          height: 50vh; }
+
+.slide-photography {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #00ff78;
+  padding: 0.6180339845em 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 1; }
+  .slide-photography h2 {
+    display: block;
+    height: auto;
+    font-size: 10vw; }
+  .slide-photography .images {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .slide-photography .images li {
+      display: block;
+      flex: 0 1 25%;
+      width: auto;
+      box-sizing: border-box;
+      padding: 0.6180339845em 0.6180339845em 0.6180339845em 0; }
+      .slide-photography .images li:first-child {
+        padding-left: 0.6180339845em; }
+      .slide-photography .images li img {
+        height: 50vh; }
+      .slide-photography .images li .cp_embed_wrapper {
+        width: 50vw; }
+        .slide-photography .images li .cp_embed_wrapper iframe {
+          height: 50vh; }
+
+.about {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  z-index: -1; }
+  .about:after {
+    content: "";
+    background: url("../assets/wild-sea.png");
+    background-attachment: fixed;
+    filter: grayscale(100%);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    position: fixed;
+    z-index: -1; }
+  .about nav {
+    position: fixed;
+    background-color: #070b25;
+    z-index: 99999; }
+    .about nav a {
+      color: white;
+      text-decoration: none; }
+  .about h1 {
+    margin: 15vh 0;
+    flex: 0 0 65%;
+    align-self: flex-end; }
+  .about blockquote {
+    flex: 0 0 25%;
+    align-self: center;
+    background-color: #fd0691;
+    padding: 1em 1.618034em;
+    quotes: "“" "”" "‘" "’";
+    z-index: 2; }
+    .about blockquote:after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      border-top: 48px solid #fd0691;
+      border-right: 0px solid transparent;
+      border-bottom: 50px solid transparent;
+      border-left: 98px solid transparent;
+      right: 25px;
+      bottom: -35%;
+      transform: skew(30deg); }
+
+.content {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row wrap;
+  align-self: flex-end;
+  padding: 1em; }
+  .content p, .content ul {
+    flex: 0 0 75%;
+    background-color: white;
+    color: #070b25;
+    line-height: 1.618034em;
+    padding: 1em 1.618034em; }
+  .content .contact-form {
+    flex: 0 0 75%;
+    padding: 1em 2.6180340252em;
+    background: white; }
+    .content .contact-form h2 {
+      text-transform: unset;
+      font-size: 2.6180340252em;
+      color: #070b25;
+      padding: 0; }
+    .content .contact-form input {
+      display: block;
+      width: 100%;
+      height: 5vh;
+      padding: 0 1em; }
+    .content .contact-form textarea {
+      padding: 1em;
+      margin-bottom: 1.618034em; }
+    .content .contact-form label {
+      display: block;
+      color: #070b25;
+      padding-top: 1em;
+      padding-bottom: 0.2360679726em;
+      font-size: 1.618034em; }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html {
+  font-family: 'Oswald', sans-serif;
+  color: white; }
+
+h1 {
+  font-size: 17.9442726586em;
+  line-height: .8em;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700; }
+
+.about h1 {
+  font-size: 11.0901703293em; }
+
+.about .first:before, .about .last:before {
+  display: block;
+  position: absolute;
+  color: #00ff78;
+  transform: translate(10px, 10px);
+  z-index: -1; }
+
+.about .first {
+  display: block;
+  transform: translateX(-15px); }
+  .about .first:before {
+    content: "ABOUT"; }
+
+.about .last {
+  display: block;
+  transform: translateX(-20px); }
+  .about .last:before {
+    content: "ME"; }
+
+.about blockquote {
+  font-weight: 300;
+  position: relative;
+  font-size: 1em;
+  line-height: 1.618034em; }
+  .about blockquote:before {
+    content: open-quote;
+    color: white;
+    display: block;
+    position: absolute;
+    z-index: 999;
+    font-size: 6.8541021569em;
+    transform: translate(-35px, 20px); }
+
+h2 {
+  font-size: 6.8541021569em;
+  line-height: 1em;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  padding: 0.2360679726em; }
+
+p, ul {
+  font-weight: 200;
+  font-size: 1.618034em; }
+
+nav {
+  font-size: 5vw;
+  font-weight: 200; }
+  nav ul {
+    font-size: 1em; }
+  nav a, nav a:visited {
+    color: white; }
+
+.logo {
+  font-weight: 700; }
+
+.intro {
+  font-weight: 200;
+  font-size: 2.6180340252em; }
+
+p.position {
+  color: #fd3633;
+  padding: 0;
+  margin: 0; }
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .slide-home {
+    height: 90vh !important; }
+  h1 {
+    font-size: 30vw; }
+  h2 {
+    font-size: 2.6180340252em; }
+  .intro {
+    font-size: 7vw;
+    grid-column: 2/-2 !important; }
+    .intro:after {
+      bottom: -24% !important; }
+  .parallax {
+    top: 3vh !important; }
+  .about blockquote {
+    display: none; }
+  .content p, .content ul {
+    flex-grow: 1; } }
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .intro {
+    font-size: 3vw; }
+    .intro:after {
+      bottom: -50% !important; }
+  h1 {
+    font-size: 30vw; }
+  .about blockquote {
+    display: none !important; }
+  .content p, .content ul {
+    flex-grow: 1; } }
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .intro {
+    font-size: 3vw; }
+    .intro:after {
+      bottom: -30% !important; }
+  h1 {
+    font-size: 30vw; }
+  .about blockquote {
+    display: none !important; }
+  .content p, .content ul {
+    flex-grow: 1; } }
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .intro {
+    font-size: 1vw !important; }
+    .intro:after {
+      bottom: -25% !important; }
+  h1 {
+    font-size: 30vw; }
+  .about blockquote {
+    display: none !important; }
+  .content p, .content ul {
+    flex-grow: 1; } }
+
+/*# sourceMappingURL=main.css.map */

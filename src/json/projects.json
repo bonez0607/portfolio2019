@@ -1,0 +1,17 @@
+[
+{
+	"title": "Interactive SVG Map",
+	"problem": "It had come to our attention that there was no quick and easy way to see which states had Agroforestry-related practice standards. Previously, in order to see this information the user had to go through a multi-step process which included manually accessing the NRCS Field Office Technical Guide (FOTG)  for each state and look through the list of offered practice standards to determine if the standard for that state. ",
+	"requirements": ["Create a map that visual shows which states offer which standards.", 
+					"Link to the NRCS Field Office Technical Guide",
+					"Maintainability is a big concern for our team as our team consists of four people. The team members are resource professionals and are not developers, so consideration was given to how the task of updating the map could be spread across the team."],
+	"research": "When looking around the internet for examples of 'Interactive Maps' I found a large array of really impressive maps that plot thousands of data points, provide 3d animation, embed images within the map itself, etc. While impressive, the complexity of these maps simply wasn’t needed for this project. \n One of our partners had just released an interactive map of their own that plotted perennial farms across the United States. This map includes multiple map layers that could be shown or hidden via clicked checkboxes. The map was built using Leaflet.js which touts itself as “the leading open-source JavaScript library for mobile-friendly interactive maps.”",
+	"journey": "",
+	"links": []
+}
+
+
+
+
+
+]

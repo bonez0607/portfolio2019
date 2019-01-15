@@ -1,0 +1,302 @@
+/* Practices Map CSS */
+/* By Joe Banegos, 11/29/2016 */
+
+#map ul:first-child {
+  text-align: center;
+  list-style: none; }
+
+a:focus {
+  outline: thin solid; }
+
+/*
+|------------------
+| Map Canvas
+|-----------------
+*/
+
+#united-states {
+  position: relative;
+  height: 500px;
+  margin-bottom: 15px; 
+}
+
+#united-states svg{
+  z-index: 2;
+}
+
+#united-states a:focus {
+    outline: none; }
+#united-states .legend {
+    position: relative;
+    font-size: 1.15em;
+    left: 40px;
+    line-height: 2.15em;
+    top: -105px; }
+
+legend {
+  position: relative;
+  background: white; }
+
+/*
+|------------------
+| Radio button Styling
+|-----------------
+*/
+
+.practice-selection {
+  position: relative;
+  display: block;
+  margin: -10px 0 15px 0;
+  padding: 5px 0; }
+
+.active {
+  box-shadow: 0 0 5px #006699;
+  box-sizing: border-box;
+  border-radius: 10px; }
+
+input[type=radio] {
+  opacity: 0;
+  margin-left: -20px; }
+  input[type=radio]:focus {
+    outline: thin solid; }
+
+.practice-selection label {
+  margin: 5px;
+  text-align: center;
+  display: inline-block;
+  padding: 5px 5px;
+  width: 200px;
+  border-radius: 15px;
+  border: 2px solid white;
+  z-index: 50; }
+  .practice-selection label:hover, .practice-selection label:focus {
+    background: #E3E3E3;
+    cursor: pointer; }
+
+
+/*
+|------------------
+| Infobox
+|-----------------
+*/
+
+.infobox {
+  position: absolute;
+  display: block;
+  width: 250px;
+  height: auto;
+  padding-bottom: 10px;
+  top: -9999px;
+  left: -9999px;
+  border: solid 4px #006699;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 10;
+  text-align: center; }
+  .infobox_title {
+    position: relative;
+    background-color: #f3f7fc;
+    width: 100%;
+    height: 35px;
+    padding: 10px 0 0 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #006699;
+    box-shadow: 0 0 5px #BABABA;
+    box-sizing: border-box;
+    text-align: left; }
+  .infobox_body {
+    position: relative;
+    padding: 0 0 0 10px;
+    text-align: left;
+    box-sizing: border-box; }
+  .infobox_close {
+    background-image: url("../images/close.png");
+    background-image: none, url("../images/close.svg");
+    background-color: #FFF;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    top: -15px;
+    right: -15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); }
+    .infobox_close:hover, .infobox_close:focus {
+      background-image: url("../images/close-hover.png");
+      background-image: none, url("../images/close-hover.svg");
+      cursor: pointer;
+      outline: thin solid; }
+
+/*infobox listed practices*/
+.listedPractice {
+  display: block;
+  margin: 15px 0 25px 40px; }
+
+.offeredPractice span {
+  color: #407740; }
+
+.notOfferedPractice span {
+  color: #7D7D7D; }
+
+/* icon style */
+.checkmark, .redx {
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin: -9px 0 0 -35px;
+  border: 1px solid #FFF;
+  border-radius: 100%; }
+
+.checkmark {
+  background-image: url("../images/success.png");
+  background-image: none, url("../images/success.svg");
+  box-shadow: 0 0 10px #BABABA; }
+
+.redx {
+  background-image: url("../images/no.png");
+  background-image: none, url("../images/no.svg"); }
+
+/*
+|------------------
+| Button
+|-----------------
+*/
+.trigger {
+  width: 200px;
+  margin: 0 10px 0 0;
+  font-family: verdana;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 10px;
+  color: #336633;
+  background-color: #CDDDCC;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  border: 2px solid #336633;
+  border-radius: 5px;
+  cursor: pointer; }
+  .trigger:hover, .trigger:focus {
+    outline: thin solid;
+    color: white;
+    background-color: #006699;
+    border-color: #006699;
+    transition: all, 0.1s, ease-in-out;
+    -moz-transition: all, 0.1s, ease-in-out;
+    -o-transition: all, 0.1s, ease-in-out;
+    -ms-transition: all, 0.1s, ease-in-out;
+    -webkit-transition: all, 0.1s, ease-in-out; }
+
+.trigger {
+  background-image: url("../images/external-link.png");
+  background-image: none, url("../images/external-link.svg");
+  background-position: 90% center; }
+  .trigger:hover, .trigger:focus {
+    background-image: url("../images/external-link-hover.png");
+    background-image: none, url("../images/external-link-hover.svg"); }
+
+/*
+|------------------
+| Pre-loader
+|-----------------
+*/
+.preloader {
+  position: absolute;
+  display: inline-block;
+  background-color: white;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 550px; }
+  .preloader-text {
+    top: 140px;
+    position: relative;
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    animation: flash 1.5s ease-in-out infinite;
+    -moz-animation: flash 1.5s ease-in-out infinite;
+    -o-animation: flash 1.5s ease-in-out infinite;
+    -ms-animation: flash 1.5s ease-in-out infinite;
+    -webkit-animation: flash 1.5s ease-in-out infinite; }
+  .preloader-spin {
+    display: block;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid #f2f2f2;
+    border-top-color: #006699;
+    top: 150px;
+    right: "";
+    bottom: "";
+    left: 50%;
+    animation: spin 3s linear infinite;
+    -moz-animation: spin 3s linear infinite;
+    -o-animation: spin 3s linear infinite;
+    -ms-animation: spin 3s linear infinite;
+    -webkit-animation: spin 3s linear infinite; }
+    .preloader-spin:before {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid #f2f2f2;
+      border-top-color: #336633;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+      animation: spin 6s linear infinite;
+      -moz-animation: spin 6s linear infinite;
+      -o-animation: spin 6s linear infinite;
+      -ms-animation: spin 6s linear infinite;
+      -webkit-animation: spin 6s linear infinite; }
+    .preloader-spin:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #FF4C49;
+      top: 15px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      animation: spin 4s linear infinite;
+      -moz-animation: spin 4s linear infinite;
+      -o-animation: spin 4s linear infinite;
+      -ms-animation: spin 4s linear infinite;
+      -webkit-animation: spin 4s linear infinite; }
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    -o-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg); }
+  50% {
+    transform: rotateZ(270deg);
+    -moz-transform: rotateZ(270deg);
+    -o-transform: rotateZ(270deg);
+    -ms-transform: rotateZ(270deg);
+    -webkit-transform: rotateZ(270deg); }
+  100% {
+    transform: rotateZ(-360deg);
+    -moz-transform: rotateZ(-360deg);
+    -o-transform: rotateZ(-360deg);
+    -ms-transform: rotateZ(-360deg);
+    -webkit-transform: rotateZ(-360deg); } }
+
+@keyframes flash {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+

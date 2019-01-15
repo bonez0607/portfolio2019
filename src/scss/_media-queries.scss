@@ -1,0 +1,155 @@
+
+
+
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+
+
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  	h1{
+		
+		font-size: 40vw;
+
+	}
+
+	h2{
+		font-size: ms(2);
+	}
+	nav {
+		font-size: ms(0);
+		height: 5vh;
+		.logo{
+	
+		}
+	}
+
+	.intro{
+		font-size: 10vw;
+	}
+
+	.parallax{
+		top: 3vh !important;
+	}
+
+	.about {
+		blockquote{
+			display: none;
+		}
+
+	}
+
+	.content{
+		p, ul{
+			flex-grow: 1;
+		}
+	}
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+ 	.intro{
+		font-size: 3vw;
+		&:after{
+			bottom: -50% !important;
+		}
+	}
+
+	h1{
+		font-size: 30vw;
+	}
+
+	.about {
+		blockquote{
+			display: none !important;
+		}
+
+	}
+	.content{
+		p, ul{
+			flex-grow: 1;
+		}
+	}
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  	.intro{
+		font-size: 5vw;
+		&:after{
+			bottom: -30% !important;
+		}
+	}
+
+	h1{
+		font-size: 30vw;
+	}
+
+	.about {
+		blockquote{
+			display: none !important;
+		}
+
+	}
+	.content{
+		p, ul{
+			flex-grow: 1;
+		}
+	}
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  	.intro{
+		font-size: 7vw;
+		&:after{
+			bottom: -25% !important;
+		}
+	}
+
+	h1{
+		font-size: 30vw;
+	}
+
+	.about {
+		blockquote{
+			display: none !important;
+		}
+
+	}
+	.content{
+		p, ul{
+			flex-grow: 1;
+		}
+	}
+  
+}

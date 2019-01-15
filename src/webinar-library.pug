@@ -1,0 +1,75 @@
+doctype html
+html
+    include ./includes/head.pug
+    title Joseph Banegas' Portfolio - Interactive Map
+    meta(name='author', content='name')
+    meta(name='description', content='Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE')
+    meta(name='keywords', content='design, photographer, front-end developer, web')
+    link(href="./final-products/interactive-map/css/map.css" rel="stylesheet")
+    script(src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js")
+
+    body.project-pages
+        section.hero
+            include ./includes/nav-bar.pug
+            img(src="./assets/web/webinar-library.png")
+            h1 Webinar 
+                br 
+                .last-name Library
+
+        section.copy   
+            section
+                ul.frameworks
+                    li PHP 
+                    li jQuery
+                    li JavaScript
+                    li HTML
+                    li CSS
+                    li tablesorter.js            
+            
+                p Our center was beginning to find that there were a plethora of webinars that were being recorded and hosted on various sites about agroforestry-related topics. It had come to the out teams attention that people were often wanting to refer back to these webinars or share them. 
+
+                p We wanted to curate these webinars and put them in a single place so our audience could more easily find relevant content to meet their needs.
+
+            section
+                h2 Requirements
+                ul
+                    li Must be easy to maintain
+                    li An incorporated page within the website
+                    li Items must be sortable and filterable by multiple selections
+                    li Show item count for all webinars.
+                    li Must use website template
+
+            section
+                h2 Research 
+
+                p Since we knew that the list of webinars was going to be interactive. I took a look at how others handled filtering items (amazon, wayfair, home depot, newegg, etc.). I noticed where and how they placed their controls. I went to the Norman Nielson Group who specializes in user experience research and looked through the <a href="https://www.nngroup.com/articles/applying-filters/">some of the advice</a> they provided on filtering
+
+                p I also looked around GitHub and Google for some libraries that assisted with sorting and filtering.
+
+
+            section
+                h2 The Journey 
+                p The library needed to be built as a seprate page within the current website. Because of this a lot of the design choices were selected by the template. After conducting my research I did a simple wireframe of how the page would be laid out. I decided to place the controls in left third column.
+
+                p We had success using an Excel spreadsheet for the data entry in a previous project as this allowed everyone the ability to contribute to the listing. I mapped this spreadsheet to XML format so that we could do a simple export and the page would automatically populate. 
+
+                blockquote.left I decided to use PHP to parse the XML file and populate the table. This way there wasn't a need to make a seperate HTTP request just to get the data.
+
+                p I decided to use PHP to parse the XML file and populate the table. This way there wasn't a need to make a seperate HTTP request just to get the data. I then use JavaScript to handle the filtering of the content. Within the PHP script I assigned CSS classes to the webinars that would be used to ultimately create the checkbox group. Data categories were then assigned to the individual items  parsed when filtering via JavaScript. The data categories consisted of the data value for each items respective columns.
+
+                p Once the PHP script was written and working it was time to move to the JavaScript. I wrote a function to add the checkboxes after page load, this way if the user wasn’t using JavaScript on the web page they wouldn’t be confused by non-working controls. In addition, I created a simple check all/none button.
+
+                p To add the total count I simple found the length of the rows of the table minus 2 rows that had been created for when a selection didn’t produce any results or everything was unchecked. I also add an individual count next to each checkbox so users could quickly see how many items exist for that particular selection.
+
+                p I then needed to create a function that allowed the user to filter by multiple factors across multiple checkbox groups. For example, if the user wanted to select two different years to filter by as well as a variety of different practices. This function detects on change if a user has selected a checkbox and applies these items to an object, which is used as a hash map. The function then loops over all the items in the list and reads the data categories and splits them. For each item another loop is run on the split data categories and they are checked to see if they match up with user selected items. If there is a match the item is flagged as true. Once the loops have run the function returns all those that have been matched.
+
+                p Lastly, I needed to make the columns sortable. During my research I came across <a href="https://mottie.github.io/tablesorter/docs/">tablesorter.js</a> and decided it was a good fit for this project. It appeared to be a simple plugin to do what I needed it. I read through the Docs and implemented to fit my needs. 
+
+            section 
+                h2 Final Product
+                p The success of this project lent itself to be reused for indexing agroforestry-related Sustainable Agriculture Research Grants. A bit after this was implemented on our site and colleague asked if I could walk him through setting up a similar function on his site. 
+
+                p The way the content was structured made the implementation to the new project quite simple. Huzzah, for reusable code! 
+      
+                a(href="https://www.fs.usda.gov/nac/multimedia/Webinar_Library/index.php" class="btn purple") View website
+        include ./includes/footer.pug  

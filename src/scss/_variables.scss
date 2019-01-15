@@ -1,5 +1,16 @@
-$dark: #070b25;
-$red: #fd3633;
-$blue: #46acbf;
-$green: #00ff78;
-$pink: #fd0691;
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600,700,800,900');
+
+$font: "Fira Sans", sans-serif;
+
+$blue: #192279;
+$white: #ffffff;
+$lavendar: #9eb0ff;
+$orange: #fe9b00;
+$mid-purple: #1f2e98;
+$light-purple: #2836a9;
+$light-blue: #0048b8;
+$red: #de2a00;
+$purple: #451386;
+
+$gradient-purple: linear-gradient(135deg, #6b86ff -80%, #0e1443 180%);
+$gradient-figure: linear-gradient(-135deg, $mid-purple 0%, darken($lavendar, 20%) 100%);;

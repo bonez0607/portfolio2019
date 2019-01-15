@@ -1,0 +1,132 @@
+doctype html
+html
+    include ./includes/head.pug
+    title Joseph Banegas' Portfolio - Interactive Map
+    meta(name='author', content='name')
+    meta(name='description', content='Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE')
+    meta(name='keywords', content='design, photographer, front-end developer, web')
+    link(href="./final-products/interactive-map/css/map.css" rel="stylesheet")
+
+    script(src="./final-products/interactive-map/js/jquery-1.12.3.min.js" type="text/javascript")
+    script(src="./final-products/interactive-map/js/raphael-min.js" type="text/javascript")
+    script(src="./final-products/interactive-map/js/map.js" type="text/javascript")
+
+    body.project-pages
+        section.hero
+            include ./includes/nav-bar.pug
+            include ./includes/interactive-map.html
+            h1 Interactive 
+                br 
+                .last-name Map
+                
+       
+
+        section.copy               
+            section
+                ul.frameworks
+                    li CSS
+                    li Javascript 
+                    li jQuery 
+                    li HTML 
+                    li Raphael.js
+                    li SVG 
+                    li XML
+                    
+
+                p It had come to our attention that there was no quick and easy way to see which states had Agroforestry-related practice standards. Previously, in order to see this information the user had to go through a multi-step process which included manually accessing the <a href="https://efotg.sc.egov.usda.gov/#/">NRCS Field Office Technical Guide (FOTG)</a> for each state and look through the list of offered practice standards to determine if the standard for that state. 
+
+            section
+                h2 Requirements
+                ul
+                    li Create a map that visual shows which states offer which standards. 
+                    li Link to the NRCS Field Office Technical Guide
+                    li Maintainability - this is a big concern for our team as our team consists of four people. The team members are resource professionals and are not developers, so consideration was given to how the task of updating the map could be spread across the team.
+            section
+                h2 Research 
+
+                blockquote.right While impressive, the complexity of these maps simply wasn’t needed for this project. 
+
+                p When looking around the internet for examples of “Interactive Maps” I found a large array of really impressive maps that plot thousands of data points, provide 3d animation, embed images within the map itself, etc. While impressive, the complexity of these maps simply wasn’t needed for this project. 
+
+                p One of our partners had just released an <a href="https://perennialmap.org">interactive map</a> of their own that plotted perennial farms across the United States. This map includes multiple map layers that could be shown or hidden via clicked checkboxes. The map was built using Leaflet.js which touts itself as “the leading open-source JavaScript library for mobile-friendly interactive maps.”
+
+            section
+                h2 The Journey 
+                p After presenting my research to the team it was decided that we would go with the Leaflet.js approach and create a map overlay that the user could change via radio buttons. Each state would then ideally link to the FOTG so the user could access more information.
+
+                p The team was also going to begin going through each of the states’ FOTG and imputing the findings into an excel spreadsheet that was formatted to export into XML format.
+
+                p I developed a prototype and presented it to the team.
+
+                figure
+                    img(src="../dist/assets/projects/interactive-map/map-prototype.png")
+                    figcaption The initial prototype I created for our team to look over.
+                p However, there were concerns that when the map was zoomed to show the continental United States it was difficult to see both Alaska and Hawaii. When zoomed out enough to see Alaska the map made Hawaii too small to see.
+
+                figure
+                    img(src="../dist/assets/projects/interactive-map/map-prototype-2.png")
+                    figcaption The prototype is zoomed out so that Hawai'i is visible. However, it is difficult see whether or not the practice standard is offered by the state.
+                p I initially began looking at the Leaflet.js documentaion and for map layers that placed Hawaii and Alaska next to or within a map of the contiguous 48 states. 
+
+                p After some searching it had been suggested that you could inset a ‘div’ element within the map and essentially duplicate the map at a different zoom level. I was able to implement this, but it seemed really clunky for such a simple map. 
+
+                blockquote.left That’s when it hit me, we’re literally just animating shapes here. 
+
+                p After stumbling across this question <a href="https://stackoverflow.com/questions/30203360/leaflet-js-how-to-draw-only-the-contiguous-48-states">this question</a> on StackOverflow during my initial search. I took some time to think back to what we were actually trying to solve. There was no need to load a map three separate times, there was no need to zoom or out, we didn’t need geo accurate date points… we were simply change colors of the states. At this point it seemed Leaflet was a bit of overkill for what we were trying to accomplish.
+
+                p That’s when it hit me, we’re literally just animating shapes here. 
+
+                p I updated the team on my thoughts about just animating a simple SVG map that could easily be embedded on any webpage we wanted. So there would be no need to link to, we could incorporate on the page itself. To be fair, we could’ve done this with the Leaflet version too, but give our website’s layout, it too would have been a bit clunky.  
+
+                blockquote.right Since the implementation of this map year-over-year pageviews have increased 239%.
+
+                p Enter SVG and Raphael.js. I got the SVG map I needed from wikipedia and got to work. It’s important to note that this wasn’t a ‘back to the drawing board’ moment. I was able to use much of the CSS and JavaScript logic that had been developed for the previous prototype. From there, a simple export from the excel spreadsheet and implementing an Ajax call to load the XML data from the server and the map was up and running. 
+
+                h3 Final testing
+                p We then sent the map to a small group of resource professionals and asked for their input. The map itself was received quite well. However, several brought up the idea that it would be nice to see a simple list of all the standards each state provides. At this moment, the user would still have to click through all of the options to determine the practices a state offers. 
+
+                p As a team we decided that we could solve this issue by incorporating the list into the pop-up modal that appears when a user selects a specific state. After the meeting I set-out to design the new modal. We settled on an option and I implemented it into the map.
+
+                p Since the implementation of this map year-over-year pageviews have increased 239%.
+
+            section
+                h2 Final Product
+                #map
+
+                    .practice-selection
+                        fieldset
+                            label.alleycroppingLabel(for='AlleyCropping', style='border: 2px solid rgb(132, 95, 170);')
+                                input#AlleyCropping(checked='checked', name='practice', type='radio')
+                                |           Alley Cropping (311)
+                            label.multistoryLabel(for='MultistoryCropping', style='border: 2px solid rgb(255, 255, 255);')
+                                input#MultistoryCropping(name='practice', type='radio')
+                                |           Multistory Cropping (379)
+                            label.riparianLabel(for='RiparianForestBuffers', style='border: 2px solid rgb(255, 255, 255);')
+                                input#RiparianForestBuffers(name='practice', type='radio')
+                                |           Riparian Forest Buffers (391)
+                            label.silvopastureLabel(for='Silvopasture', style='border: 2px solid rgb(255, 255, 255);')
+                                input#Silvopasture(name='practice', type='radio')
+                                |           Silvopasture Establishment (381)
+                            label.windbreaksLabel(for='WindbreakEstablishment', style='border: 2px solid rgb(255, 255, 255);')
+                                input#WindbreakEstablishment(name='practice', type='radio')
+                                |           Windbreak Establishment (380)
+                            label.windbreakrenovationLabel(for='WindbreakRenovation', style='border: 2px solid rgb(255, 255, 255);')
+                                input#WindbreakRenovation(name='practice', type='radio')
+                                |           Windbreak Renovation (650)
+                    #united-states
+
+                    .legend
+   
+                 
+                    .infobox(tabindex='-1')
+                        .infobox_title
+                            h1 Region name
+                        .infobox_body
+                            .offeredPractice
+                            .notOfferedPractice
+                        button.trigger(aria-label='Opens new window to NRCS Field Office Technical Guide locator', title='Opens new window to NRCS Field Office Technical Guide locator')
+                            | Find your FOTG
+                            span.external
+                        button.infobox_close(aria-label='close', title='close')
+                a(href="https://www.fs.usda.gov/nac/practices" class="btn purple") View website
+        include ./includes/footer.pug  

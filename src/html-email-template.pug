@@ -1,0 +1,84 @@
+doctype html
+html
+    include ./includes/head.pug
+    title Joseph Banegas' Portfolio - HTML email template
+    meta(name='author', content='name')
+    meta(name='description', content='Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE')
+    meta(name='keywords', content='design, photographer, front-end developer, web')
+    link(href="./final-products/interactive-map/css/map.css" rel="stylesheet")
+
+    body.project-pages
+        section.hero
+            include ./includes/nav-bar.pug
+            img(src="./assets/web/html-email.png")
+            h1 Email 
+                br 
+                .last-name Template
+                
+        section.copy               
+            section
+                ul.frameworks
+                    li CSS 
+                    li HTML
+                    li Illustrator
+                    li Photoshop
+
+                p The center had done a great job getting subscribers for their the printed publications, but hadn’t really started to reach out to its audience in a digital fashion. 
+
+                p At a planning meeting I pitched the idea of creating a an e-newsletter so that the center could expand their digital reach.
+
+            section
+                h2 Requirements
+                ul
+                    li Needed to be a template that could be quickly updated and reused.
+                    li Visual appealing, graphic oriented w/limited text.
+                    li Should be more of an extension of our website.
+                    li Need to work across modern email clients. Heavy importance on Outlook as a good majority of the audience would be using Outlook. 
+
+            section
+                h2 Research 
+
+                p I looked at various inspiration sites at how other companies handled their newsletter. We looked through several of MailChimp’s ready made templates, but nothing was quite jumping out as the right solution. 
+
+                p I explored the “code your own” and read through the docs of how to implement MailChimp’s templating language to create your own. 
+
+                p I explored html email best practices. The research exposed that HTML emails showed be coded differently than you’d code a website. To ensure consistency you should use ‘tables’ instead of ‘divs’. 
+
+
+            section
+                h2 The Journey 
+                p We had quite a few meetings with our team to establish what we were really wanting out of this. Would it be an extension of our print newsletter? Was it going to be story driven? How and who was going to maintain this and ensure it gets out? How often should we send it? 
+
+                p We decided on an e-newsletter that would go out quarterly. In each issue we would feature some of the latest publications, some events, and then a section titles “more to explore” which would provide helpful agroforestry-related links to the reader. 
+
+                p After conducting some of the initial research I did a couple of quick common email template layouts and presented them to the team. We settled on a simple 3X3 grid. For each edition of the e-newsletter we would incorporate three newly released or relevant publications, three agroforestry-related events and three items for a “more to explore” section. 
+
+                p I then went to Photoshop to design a couple of mockups to present the team. We picked one and I began to code the final product. 
+
+                figure
+                    img(src="./final-products/html-email/mailchimp-full.jpg")
+                    figcaption One of the initial mock-ups laid out for the team.
+
+                p Upon testing the final product by sending it to some selected individuals we found that some changes needed to be made. One was the background color needed be lightened. It was found that when the user attempted forwarded the email in outlook - outlook preserved the background color and when the user typed the message it would require them to change the font color in order to provide sufficient contrast. 
+
+                figure
+                    img(src="./final-products/html-email/text-dark-bkg.jpg")
+                    figcaption Demonstration of text/background contrast on the inital background when forwarding email to others.
+
+                p Another item that was adapted was when people received a forwarded email it wasn’t clear where they could subscribe to receive the newsletter themselves. We created a subscribe button to the top right corner of the newsletter. We tried various colors for the button and settled on the bright green background for the button. 
+
+                figure
+                    img(src="./final-products/html-email/icons.jpg")
+                    figcaption Reusable icons I developed in Illustrator for the 'More To Explore' section. 
+
+                p Since the initial launch we’ve made some updates. The “more to explore” section, is now composed of reusable icons rather than images as we found not every link had an image that went with it. 
+
+                p We also use the newsletter to bring attention to some older, but still relevant publications. There was a need to identify which elements were new, and so I created a badge that could be placed on items that are new.
+
+            section
+
+                h2 Final Product
+                .image-thirds
+                    img(src="./final-products/html-email/example-1.png")
+                    img(src="./final-products/html-email/example-2.png")
+        include ./includes/footer.pug  
