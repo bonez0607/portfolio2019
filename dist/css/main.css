@@ -85,23 +85,6 @@ img {
 body {
   width: 80vw; }
 
-nav {
-  grid-column: 1/-1;
-  grid-row: 2/3;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between; }
-  nav ul {
-    display: flex;
-    flex-flow: row nowrap;
-    flex-grow: 0;
-    flex-shrink: 1;
-    justify-content: space-between;
-    align-items: center; }
-    nav ul li {
-      flex-shrink: 0;
-      margin-right: 0.7500000002rem; }
-
 .hero {
   display: grid;
   grid-template-columns: 1fr repeat(11, 1fr);
@@ -117,12 +100,6 @@ nav {
   grid-column: 1/-1;
   grid-row: 5/-2;
   align-self: end; }
-
-ul.nav-btns {
-  flex-basis: 35%; }
-
-ul.profiles {
-  flex-basis: 10%; }
 
 .projects {
   display: flex;
@@ -156,10 +133,14 @@ ul.profiles {
 .half {
   display: flex;
   flex-flow: column nowrap;
-  flex-basis: 500px;
+  flex-basis: 50%;
   align-items: stretch;
   flex-shrink: 1;
   flex-grow: 0; }
+  .half:before {
+    content: '';
+    display: table;
+    padding-top: 100%; }
   .half div {
     flex-basis: 50%;
     min-height: 50vh; }
@@ -399,22 +380,10 @@ footer {
   border-top: 1px solid #9eb0ff;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 75px 1fr 25px; }
-  footer .logo, footer ul.nav-btns, footer .copyright {
-    grid-row: 1/2;
-    align-self: center; }
-  footer .logo {
-    grid-column: 1/2; }
-  footer ul {
-    list-style: none;
-    margin: 0; }
   footer p {
     margin: 0;
     padding: 0;
     line-height: 1.7777777769rem; }
-  footer ul.nav-btns {
-    grid-column: 2/-3;
-    display: flex;
-    justify-content: space-between; }
   footer .copyright {
     grid-column: -3/-1;
     display: flex;
@@ -655,41 +624,6 @@ ul {
   list-style: initial;
   margin-left: 3.160493824rem; }
 
-nav {
-  font-size: 1.7777777769rem; }
-  nav ul {
-    list-style: none;
-    margin-left: 0; }
-    nav ul li a .logo {
-      color: #ffffff;
-      font-weight: 900;
-      font-size: 1.333333333rem;
-      text-decoration: none; }
-    nav ul li a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 300; }
-      nav ul li a:hover {
-        color: #fe9b00; }
-
-footer ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 300; }
-
-footer .logo, nav ul li.logo a {
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 1.333333333rem;
-  text-decoration: none; }
-
-nav ul.profiles li {
-  font-size: 1.7777777769rem;
-  opacity: .7; }
-
-nav ul.nav-btns {
-  font-size: 0.7500000002rem; }
-
 .hero .last-name {
   color: #9eb0ff; }
 
@@ -700,5 +634,72 @@ nav ul.nav-btns {
   text-decoration: none;
   color: #ffffff;
   font-size: 1.333333333rem; }
+
+nav {
+  font-size: 1.7777777769rem;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+  nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 0;
+    flex-shrink: 1;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-left: 0;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.333333333rem;
+    text-decoration: none; }
+    nav ul li {
+      flex-shrink: 0;
+      margin-right: 0.7500000002rem; }
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300; }
+      nav ul li a:hover {
+        color: #fe9b00; }
+    nav ul.nav-btns {
+      flex-basis: 35%;
+      font-size: 0.7500000002rem; }
+    nav ul.profiles {
+      flex-basis: 10%; }
+      nav ul.profiles a {
+        font-size: 1.7777777769rem;
+        opacity: .7; }
+
+footer ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300; }
+  footer ul li a:hover {
+    color: #fe9b00; }
+
+.logo, nav ul li.logo a {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.333333333rem;
+  text-decoration: none; }
+
+footer .logo, footer ul.nav-btns, footer .copyright {
+  grid-row: 1/2;
+  align-self: center; }
+
+footer .logo {
+  grid-column: 1/2; }
+
+footer ul {
+  list-style: none;
+  margin: 0; }
+
+footer ul.nav-btns {
+  grid-column: 2/-3;
+  display: flex;
+  justify-content: space-between; }
 
 /*# sourceMappingURL=main.css.map */
