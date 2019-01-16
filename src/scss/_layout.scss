@@ -370,6 +370,8 @@ blockquote{
 }
 
 figure{
+	display: flex;
+	flex-flow: row wrap;
 	padding: ms(0);
 	background: $gradient-purple;
 	figcaption{
@@ -377,6 +379,15 @@ figure{
 		padding: ms(-1) 0 0 0;
 		line-height: ms(1);
 	}
+}
+
+.thirds {
+	img{
+		flex-basis: 33%;
+		flex-grow:1;
+		flex-shrink:0;
+	}
+
 }
 
 .project-pages{
