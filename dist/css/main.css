@@ -539,12 +539,19 @@ blockquote {
     border-bottom: 0.4218750003rem solid #fe9b00; }
 
 figure {
+  display: flex;
+  flex-flow: row wrap;
   padding: 1rem;
   background: linear-gradient(135deg, #6b86ff -80%, #0e1443 180%); }
   figure figcaption {
     color: #ffffff !important;
     padding: 0.7500000002rem 0 0 0;
     line-height: 1.333333333rem; }
+
+.thirds img {
+  flex-basis: 33%;
+  flex-grow: 1;
+  flex-shrink: 0; }
 
 .project-pages .hero img, .project-pages .hero svg {
   grid-row: 1/-1;
