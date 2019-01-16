@@ -61,19 +61,13 @@ module.exports = function(grunt) {
           localeExtension: true,
           pretty: true
         },
-        files: {
-          
-            'dist/index.html': ['src/index.pug'],
-            'dist/about.html': ['src/about.pug'],
-            'dist/interactive-map.html': ['src/interactive-map.pug'],
-            'dist/webinar-library.html': ['src/webinar-library.pug'],
-            'dist/html-email-template.html': ['src/html-email-template.pug'],
-            'dist/pollinator-newsletter.html': ['src/pollinator-newsletter.pug'],
-            'dist/wildlife-newsletter.html': ['src/wildlife-newsletter.pug'],
-            'dist/agroforestry-notes.html': ['src/agroforestry-notes.pug'],
-            'dist/about.html': ['src/about.pug'],
-          
-        }
+        files: [ {
+                          cwd: "./src",
+                          src: "**/*.pug",
+                          dest: "./dist",
+                          expand: true,
+                          ext: ".html"
+                        } ]
       }
     },
     sass: {
@@ -88,6 +82,17 @@ module.exports = function(grunt) {
 
             }
         }
+    },
+
+    sasslint: {
+        sasslint: {
+        options: {
+            configFile: 'config/.sass-lint.yml',
+            formatter: 'junit',
+            outputFile: 'report.xml'
+        },
+        target: ['src/scss/**/*.scss']
+      }
     },
     watch: {
         css:{
@@ -107,6 +112,7 @@ module.exports = function(grunt) {
   grunt.registerTask('gsass', ['sass']);
   grunt.registerTask('gimagemin', ['imagemin']);
   grunt.registerTask('gimage_resize', ['image_resize']);
+  grunt.registerTask('sass-lint', ['sasslint'])
 
 
   grunt.registerTask('watch-css', ['watch:css'])
