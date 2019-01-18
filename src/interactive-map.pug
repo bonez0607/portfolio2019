@@ -2,9 +2,10 @@ doctype html
 html
     include ./includes/head.pug
     title Joseph Banegas' Portfolio - Interactive Map
-    meta(name='author', content='name')
-    meta(name='description', content='Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE')
-    meta(name='keywords', content='design, photographer, front-end developer, web')
+    meta(name='description', content='We found that there was no quick and easy way to see which states had Agroforestry-related practice standards. This is the process of how this interactive map was created')
+    meta(name='keywords', content='agroforestry, design, front-end developer, web, joe banegas, joseph banegas, banegas, benegas, bangas, banagas')
+
+    
     link(href="./final-products/interactive-map/css/map.css" rel="stylesheet")
 
     script(src="./final-products/interactive-map/js/jquery-1.12.3.min.js" type="text/javascript")
@@ -18,8 +19,6 @@ html
             h1 Interactive 
                 br 
                 .last-name Map
-                
-       
 
         section.copy               
             section
@@ -33,7 +32,7 @@ html
                     li XML
                     
 
-                p It had come to our attention that there was no quick and easy way to see which states had Agroforestry-related practice standards. Previously, in order to see this information the user had to go through a multi-step process which included manually accessing the <a href="https://efotg.sc.egov.usda.gov/#/">NRCS Field Office Technical Guide (FOTG)</a> for each state and look through the list of offered practice standards to determine if the standard for that state. 
+                p We found that there was no quick and easy way to see which states had Agroforestry-related practice standards. Previously, in order to see this information the user had to go through a multi-step process which included manually accessing the <a href="https://efotg.sc.egov.usda.gov/#/">NRCS Field Office Technical Guide (FOTG)</a> for each state and look through the list of offered practice standards to determine if the standard for that state. 
 
             section
                 h2 Requirements
@@ -46,7 +45,7 @@ html
 
                 blockquote.right While impressive, the complexity of these maps simply wasn’t needed for this project. 
 
-                p When looking around the internet for examples of “Interactive Maps” I found a large array of really impressive maps that plot thousands of data points, provide 3d animation, embed images within the map itself, etc. While impressive, the complexity of these maps simply wasn’t needed for this project. 
+                p When looking around the Internet for examples of “Interactive Maps” I found a large array of really impressive maps that plot thousands of data points, provide 3D animation, embed images within the map itself, etc. While impressive, the complexity of these maps simply wasn’t needed for this project. 
 
                 p One of our partners had just released an <a href="https://perennialmap.org">interactive map</a> of their own that plotted perennial farms across the United States. This map includes multiple map layers that could be shown or hidden via clicked checkboxes. The map was built using Leaflet.js which touts itself as “the leading open-source JavaScript library for mobile-friendly interactive maps.”
 
@@ -59,14 +58,20 @@ html
                 p I developed a prototype and presented it to the team.
 
                 figure
-                    img(src="../dist/assets/projects/interactive-map/map-prototype.png")
-                    figcaption The initial prototype I created for our team to look over.
+                    img.width-focus(src="./assets/projects/interactive-map/map-prototype-2.png")
+                    figcaption This is the initial prototype I created and presented to the team. This utilized Leaflet.js. However, when zoomed out to see Hawaii and Alaska, Hawaii is too small. 
+                
                 p However, there were concerns that when the map was zoomed to show the continental United States it was difficult to see both Alaska and Hawaii. When zoomed out enough to see Alaska the map made Hawaii too small to see.
 
+                p To address this issue, I created some div overlays on top of the map. Unfortunately this required the map to be loaded three times and each change of the radio button required a function to be called three seperate times. 
+
                 figure
-                    img(src="../dist/assets/projects/interactive-map/map-prototype-2.png")
-                    figcaption The prototype is zoomed out so that Hawai'i is visible. However, it is difficult see whether or not the practice standard is offered by the state.
-                p I initially began looking at the Leaflet.js documentaion and for map layers that placed Hawaii and Alaska next to or within a map of the contiguous 48 states. 
+                    img.width-focus(src="./assets/projects/interactive-map/map-prototype.png")
+                    figcaption An update to the prototype that created overlays on top of the map. Unfortunately, this required the map to be loaded to the page three times. 
+            
+                p I initially began looking at the Leaflet.js documentation and for map layers that placed Hawaii and Alaska next to or within a map of the contiguous 48 states. 
+
+                p There had to be a better way. 
 
                 p After some searching it had been suggested that you could inset a ‘div’ element within the map and essentially duplicate the map at a different zoom level. I was able to implement this, but it seemed really clunky for such a simple map. 
 
@@ -76,18 +81,18 @@ html
 
                 p That’s when it hit me, we’re literally just animating shapes here. 
 
-                p I updated the team on my thoughts about just animating a simple SVG map that could easily be embedded on any webpage we wanted. So there would be no need to link to, we could incorporate on the page itself. To be fair, we could’ve done this with the Leaflet version too, but give our website’s layout, it too would have been a bit clunky.  
+                p I updated the team on my thoughts about just animating a simple SVG map that could easily be embedded on any web-page we wanted. So there would be no need to link to, we could incorporate on the page itself. To be fair, we could’ve done this with the Leaflet version too, but give our web-site's layout, it too would have been a bit clunky.  
 
                 blockquote.right Since the implementation of this map year-over-year pageviews have increased 239%.
 
-                p Enter SVG and Raphael.js. I got the SVG map I needed from wikipedia and got to work. It’s important to note that this wasn’t a ‘back to the drawing board’ moment. I was able to use much of the CSS and JavaScript logic that had been developed for the previous prototype. From there, a simple export from the excel spreadsheet and implementing an Ajax call to load the XML data from the server and the map was up and running. 
+                p Enter SVG and Raphael.js. I got the SVG map I needed from Wikipedia and got to work. It’s important to note that this wasn’t a ‘back to the drawing board’ moment. I was able to use much of the CSS and JavaScript logic that had been developed for the previous prototype. From there, a simple export from the excel spreadsheet and implementing an Ajax call to load the XML data from the server and the map was up and running. 
 
                 h3 Final testing
                 p We then sent the map to a small group of resource professionals and asked for their input. The map itself was received quite well. However, several brought up the idea that it would be nice to see a simple list of all the standards each state provides. At this moment, the user would still have to click through all of the options to determine the practices a state offers. 
 
                 p As a team we decided that we could solve this issue by incorporating the list into the pop-up modal that appears when a user selects a specific state. After the meeting I set-out to design the new modal. We settled on an option and I implemented it into the map.
 
-                p Since the implementation of this map year-over-year pageviews have increased 239%.
+                p Since the implementation of this map year-over-year page-views have increased 239%.
 
             section
                 h2 Final Product

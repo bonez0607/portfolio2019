@@ -1,34 +1,32 @@
 doctype html
 html
     include ./includes/head.pug
-    title About Me | Joseph Banegas' Portfolio
-    meta(name='author', content='name')
-    meta(name='description', content='Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE')
-    meta(name='keywords', content='design, photographer, front-end developer, web')
-    link(href="./final-products/interactive-map/css/map.css" rel="stylesheet")
+    title About Me | Joseph Banegas Portfolio
+
+    meta(name='description', content='Hi, I’m Joe. I am a front-end engineer and designer based in Lincoln. Currently, I am the Information Assistant for the USDA National Agroforestry Center, where I do everything from laying out publications and creating custom graphics to developing web-based tools to help users access information more easily.')
+    meta(name='keywords', content='design, front-end developer, web, joe banegas, joseph banegas, banegas, benegas, bangas, banagas')
 
     body.project-pages
         section.hero
             include ./includes/nav-bar.pug
-
+            img.headshot(src="./assets/images/headshot.jpg")
             h1 About  
                 br 
                 .last-name Me
                 
         section.copy               
             section(style="padding-top: 2em")
-                p 
-                    | Hello! I am a designer, front-end developer, and photographer based in Lincoln. 
-                    | Currently, I am an Information Assistant for the USDA National Agroforestry Center, 
-                    | where I do everything from laying out publications and creating custom graphics to developing web-based tools to help users access information more easily.
-                    | In 2018, I successully completed the USDA Forest Service National New Leader Program.
-                p
-                    | I truly enjoy problem solving being creative &emdash; which is why you'll see a multitude of projects in my portfolio. I'm a firm believer that the skills from each of the categories: Design, Web Development, and Photography overlap within another. This overlap allows me to gain perspective of what is truly needed when I begin a project. 
-                p
-                    | Since 2013, I have also been freelance photographer.
-                    | I've worked with my clients to capture birthdays, weddings, 5k races, products, portraits
-                    | specializing in event and portrait photography. 
-                    | I've captured birthdays, weddings, running events.
+                p Hi, I’m Joe.
+
+                p I truly enjoy creative problem solving — which is why you'll see a multitude of projects in my portfolio.
+
+                p I am a front-end engineer and designer based in Lincoln. Currently, I am the Information Assistant for the USDA National Agroforestry Center, where I do everything from laying out publications and creating custom graphics to developing web-based tools to help users access information more easily. 
+
+                p I am extremely passionate about web development, utilizing tools such as NPM, SCSS, ES6, HTML5, React, and PHP on a regular basis. I work with Google Chrome’s lighthouse for optimization and I use Axe to ensure all our pages meet accessibility standards. I pride myself in being up to date on the most cutting edge tools and apps at all times, “geeking out” in all things web development even on my days off.
+
+                p Are you looking for someone who isn’t afraid to get their hands dirty and solve complex, annoying problems for your team? Are you looking to excite clients and keep stakeholders thrilled with your web development work? 
+
+                a.btn.purple(href="./contact.php") Then lets chat! 
 
         include ./includes/footer.pug  
 

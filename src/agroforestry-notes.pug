@@ -1,11 +1,10 @@
 doctype html
 html
     include ./includes/head.pug
-    title Agroforestry Notes Redesign | Joseph Banegas' Portfolio
-    meta(name='author', content='name')
-    meta(name='description', content='Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE')
-    meta(name='keywords', content='design, photographer, front-end developer, web')
-    link(href="./final-products/interactive-map/css/map.css" rel="stylesheet")
+        title Agroforestry Notes Redesign | Joseph Banegas' Portfolio
+       
+        meta(name='description', content='This project came about for a couple of reasons. One of the main reasons, was new research and information had come out since some of the earliest Agroforestry Notes were written and our team wanted to update them to be more current, relevant, but most importantly - more accurate.')
+        meta(name='keywords', content='agroforestry, design, front-end developer, web, joe banegas, joseph banegas, banegas, benegas, bangas, banagas')
 
     body.project-pages
         section.hero
@@ -31,6 +30,7 @@ html
                     li PDF
                     li Future potential for content to be served in HTML format
                     li Make more visually appealing 
+                    li USDA Banner on cover 
 
 
             section
@@ -42,24 +42,44 @@ html
 
                 p I also looked back at all of the Agroforestry Notes from the 90s and looked at how the publication series itself evolved. I thought about what I could keep that maintained the recognition.
 
+                p The department has a Design Standards document that I looked through to see if anything needed to be implemented into the new design. 
+
             section
                 h2 The Journey
 
                 p These notes were originally design to be hole-punched, stuck in a binder, and taken out to the field by resource professionals. They were black and white because it was less expensive than 4-color printing. 
 
-                p We decided to continue publishing online PDFs, but thought that this was a good time to consider giving this series a bit of a facelift. 
+                blockquote.left We were no longer bound to black and white... 
+                p We decided to continue publishing online PDFs, but thought that this was a good time to consider giving this series a bit of a face-lift. 
 
                 p We were no longer bound to black and white as the documents would be viewed digitally or printed out by the user themselves. There was no longer a need to saddle stitch, which required design the product to have pages in multiples of four.  As I designed this ‘new’ look, I went over the various elements that I could keep. I felt this would make this update feel like an extension of the series, rather than an entirely new product. 
 
-                p With this update, there is also a vision of eventually getting these out of PDF format and turning them into more web friendly format. So I consideration into how these items would look as web pages and looked to see if I needed to make any adjustments to the design. 
+                p Also to help update the look and feel of the publication I decided to use a more modern font. I chose Montserrat for the headings and Open Sans for the body copy. As these would be mostly digital documents. It made sense to incorporate sans-serif fonts for this project.
 
-                p Mockups
+                figure.halves
+                    div.fonts
+                        img.width-focus(src="./final-products/af-notes/Montserrat.png")
+                    div.fonts
+                        img.width-focus(src="./final-products/af-notes/Open-sans.png")
+                    figcaption I chose the font pairing of Montserrat and Open Sans. Montserrat is primarily used for the headings and Open Sans is used for the body. 
 
-                p Ultimately, I th
+                p There were two main elements that I chose to put into the new template &mdash; the subtitles and the main banner. I liked the skimmability of the original template. By having the subtitles on the left hand side the reader could easy skim to the section they needed. 
 
-                
+                figure.halves
+                    div
+                        img(src="./final-products/af-notes/before.png")
+                    div
+                        img(src="./final-products/af-notes/after.png")
+                    figcaption 
+                        strong Left:  
+                        | Original Agroforestry Note template. 
+                        strong Right: 
+                        | Updated Agroforestry Note template.
+
+                br
             section
                 h2 Final Product
-                .image-thirds
+                figure
+                    img.width-focus(src="./final-products/af-notes/af-note-mockup1.png")
 
         include ./includes/footer.pug  

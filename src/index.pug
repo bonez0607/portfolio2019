@@ -4,12 +4,12 @@ html
     title Joseph Banegas' Portfolio - Designer | Developer | Photographer
     meta(name='author', content='name')
     meta(name='description', content='Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE')
-    meta(name='keywords', content='design, photographer, front-end developer, web')
+    meta(name='keywords', content='joe, banegas, benegas, banagas, joseph banegas, joe banegas, design, photographer, front-end developer, web')
 
     body
         section.home.hero
             include ./includes/nav-bar.pug
-            img(src="./assets/images/hero-home.png")
+            img(src="./assets/images/perspective.png")
             h1 Joe
                 br
                 span.last-name Banegas
@@ -32,16 +32,16 @@ html
 
             .full.noodles
                 h3 Noodlings
-                p Here's over 25 projects I've completed on the side, whether its keeping up with modern trends or answering questions on StackOverflow I enjoy taking time to code.
+                p Here's over 25 projects I've completed on the side, whether its keeping up with modern trends or answering questions on StackOverflow. I enjoy taking time to teach and learn code.
                
                 //list container for codepen items
                 ul
 
                 p.more-works 
-                    a(href="https://codepen.io/jbanegas/#") see more works &rarr;
+                    a(href="https://codepen.io/jbanegas/pens/popular/") see more works &rarr;
 
         section.projects
-            .half 
+            .half.order-2
                 div.project.af-notes
                     h3 Agroforestry Notes Redesign
                     a.btn.white(href="./agroforestry-notes.html")  View project
@@ -50,7 +50,7 @@ html
                     a.btn.white(href="./wildlife-newsletter.html")  View project
             .half
                 h2.subtitle.design Design Projects
-                div.project.butterfly
+                div.project.butterfly.order-2
                     h3 Pollinator Newsletter
                     a.btn.white(href="./pollinator-newsletter.html")  View project
     include ./includes/footer.pug

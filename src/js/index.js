@@ -45,17 +45,19 @@ function getPens(pens){
                 const title = pen.title;
                 const imageSrc = pen.images.small;
                 const details = pen.details
+                const link = pen.link
 
                 console.log(imageSrc);
                 console.log(pen)
                 $penList.append(
                     $("<li>")
-                        .append($("<div class='image'>")
-                            .css('background-image', "url('" + imageSrc + "')")
-                        )
-                    .append("<h4>" + title + "</h4>")
-                        .append(details)
-                        .append("<div class='num'>0" + (i+1) + "</div>"));
+                        .append($("<a href='" + link + "'>")
+                            .append($("<div class='image'>")
+                                .css('background-image', "url('" + imageSrc + "')")
+                            )
+                        .append("<h4>" + title + "</h4>")
+                            .append(details)
+                            .append("<div class='num'>0" + (i+1) + "</div>")));
             })
     })
 }

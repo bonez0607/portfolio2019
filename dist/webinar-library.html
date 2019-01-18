@@ -2,6 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="follow">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="copyright" content="Joseph Banegas">
+    <meta name="author" content="Joseph Banegas">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/regular.css" integrity="sha384-aubIA90W7NxJ+Ly4QHAqo1JBSwQ0jejV75iHhj59KRwVjLVHjuhS3LkDAoa/ltO4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous">
@@ -12,7 +17,6 @@
   <meta name="description" content="Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE">
   <meta name="keywords" content="design, photographer, front-end developer, web">
   <link href="./final-products/interactive-map/css/map.css" rel="stylesheet">
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   <body class="project-pages">
     <section class="hero">
       <nav>
@@ -20,7 +24,7 @@
           <li class="logo"> <a href="./index.html">Joe Banegas</a></li>
           <li> <a href="./index.html#work">Work </a></li>
           <li> <a href="./about.html">About</a></li>
-          <li> <a href="./contact.html">Contact</a></li>
+          <li> <a href="./contact.php">Contact</a></li>
         </ul>
         <ul class="profiles">
           <li> <a href="https://github.com/bonez0607"><i class="fab fa-github"></i></a></li>
@@ -64,15 +68,140 @@
         <p>The library needed to be built as a seprate page within the current website. Because of this a lot of the design choices were selected by the template. After conducting my research I did a simple wireframe of how the page would be laid out. I decided to place the controls in left third column.</p>
         <p>We had success using an Excel spreadsheet for the data entry in a previous project as this allowed everyone the ability to contribute to the listing. I mapped this spreadsheet to XML format so that we could do a simple export and the page would automatically populate. </p>
         <blockquote class="left">I decided to use PHP to parse the XML file and populate the table. This way there wasn't a need to make a seperate HTTP request just to get the data.</blockquote>
-        <p>I decided to use PHP to parse the XML file and populate the table. This way there wasn't a need to make a seperate HTTP request just to get the data. I then use JavaScript to handle the filtering of the content. Within the PHP script I assigned CSS classes to the webinars that would be used to ultimately create the checkbox group. Data categories were then assigned to the individual items  parsed when filtering via JavaScript. The data categories consisted of the data value for each items respective columns.</p>
+        <p>I decided to use PHP to parse the XML file and populate the table. This way there wasn't a need to make a seperate HTTP request just to get the data. I then use JavaScript to handle the filtering of the content. </p>
+        <figure>
+          <pre class="prettyprint lang-php"><code>&lt;?php
+
+  $xml = simplexml_load_file('xml/webinar-library.xml') or die ("Error: Unable to load library");
+  $record = $xml-&gt;record;
+  $headers = $xml-&gt;record-&gt;children();
+
+?&gt;</code></pre>
+          <figcaption>PHP I wrote to call the XML file for later parsing.</figcaption>
+        </figure>
+        <p>Within the PHP script I assigned CSS classes to the webinars that would be used to ultimately create the checkbox group. Data categories were then assigned to the individual items  parsed when filtering via JavaScript. The data categories consisted of the data value for each items respective columns.</p>
+        <figure>
+          <pre class="prettyprint lang-php"><code>&lt;table class="tablesorter" id="Webinar-Library"&gt;}
+    &lt;thead&gt;
+      &lt;tr id="headers"&gt;
+        &lt;?php
+
+      //loop through and get all of the XML header names
+        foreach ($headers as $column)
+          if ($column-&gt;getName() !== 'Link'){
+           
+            echo "&lt;th scope='col'&gt;" . preg_replace('/([A-Z])/' ,' $1', $column-&gt;getName()) . "&lt;/th&gt;";
+          }
+          ?&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody id="webinar"&gt;
+        &lt;?php
+
+         //Place data in appropriate cell and add appropriate classes and data categories. 
+        foreach ($record as $webinar)
+          echo "&lt;tr class='webinar' data-category='" . $webinar-&gt;Date . " " . preg_replace('/\s+/', '-', strtolower($webinar-&rt;AgroforestryPractice)) . " " . preg_replace('/\s+/', '-', strtolower($webinar-&gt;WebinarHost)) . "'&gt;",
+        "&lt;td class='practice'&gt;" . $webinar-&gt;AgroforestryPractice . "&lt;/td&gt;",
+        "&lt;td&gt;&lt;a href='" . $webinar-&gt;Link . "'&gt;" . $webinar-&gt;WebinarTitle . "&lt;/a&gt;&lt;/td&gt;",
+        "&lt;td&gt;" . $webinar-&gt;Presenter . "&lt;/td&gt;",
+        "&lt;td class='year'&gt;" . $webinar-&gt;Date . "&lt;/td&gt;",
+        "&lt;td class='host'&gt;" . $webinar-&gt;WebinarHost . "&lt;/td&gt;",
+        "&lt;/tr&gt;";
+        ?&gt;
+        &lt;tr class="make-selection"&gt;
+          &lt;td colspan="5"&gt;
+            &lt;h2&gt;Please make a selection&lt;/h2&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="no-results"&gt;
+          &lt;td colspan="5"&gt;
+            &lt;h2&gt;No results found&lt;/h2&gt;
+            &lt;p&gt;Please update your selection.&lt;/p&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+          <figcaption>PHP script I created to assign the data from the XML file to the appropriate places. Some Regex was used to make the data more human readable;</figcaption>
+        </figure>
         <p>Once the PHP script was written and working it was time to move to the JavaScript. I wrote a function to add the checkboxes after page load, this way if the user wasn’t using JavaScript on the web page they wouldn’t be confused by non-working controls. In addition, I created a simple check all/none button.</p>
         <p>To add the total count I simple found the length of the rows of the table minus 2 rows that had been created for when a selection didn’t produce any results or everything was unchecked. I also add an individual count next to each checkbox so users could quickly see how many items exist for that particular selection.</p>
-        <p>I then needed to create a function that allowed the user to filter by multiple factors across multiple checkbox groups. For example, if the user wanted to select two different years to filter by as well as a variety of different practices. This function detects on change if a user has selected a checkbox and applies these items to an object, which is used as a hash map. The function then loops over all the items in the list and reads the data categories and splits them. For each item another loop is run on the split data categories and they are checked to see if they match up with user selected items. If there is a match the item is flagged as true. Once the loops have run the function returns all those that have been matched.</p>
+        <figure>
+          <pre class="prettyprint lang-js"><code>function itemCount(arr, el) {
+   let count = {};
+   arr.forEach(function(item){
+       count[item] = count[item] ? count[item] + 1 : 1;
+   });
+   return count[el];
+}</code></pre>
+          <figcaption>Here is the function I used to generate the counts of each item.</figcaption>
+        </figure>
+        <p>I then needed to create a function that allowed the user to filter by multiple factors across multiple checkbox groups. For example, if the user wanted to select two different years to filter by as well as a variety of different practices. I came across this <a href="https://stackoverflow.com/questions/35011034/jquery-filtering-with-multiple-checkboxes">StackOverflow question</a> and adapted it to my needs. This function detects on change if a user has selected a checkbox and applies these items to an object, which is used as a hash map. </p>
+        <figure> 
+          <pre class="prettyprint lang-js"><code>    $filterCheckboxes.on('change', function() {
+       window.scrollTo(0,0);
+       // loop through checkboxes to see if one is checked
+       let $checkedLength = $("#checkboxes input[type='checkbox']:checked").length;
+       $filterCheckboxes.each(function(_) {
+           if ($checkedLength &ght; 0) {
+               let selectedFilters = {};
+               $makeSelection.hide();
+
+               $filterCheckboxes.filter(':checked').each(function() {
+                   if (!selectedFilters.hasOwnProperty(this.name)) {
+                       selectedFilters[this.name] = [];
+                   }
+                   selectedFilters[this.name].push(this.value);
+               });
+
+               // create a collection containing all of the filterable elements
+               let $filteredResults = $webinar;
+
+               // loop over the selected filter name -&gt; (array) values pairs
+               $.each(selectedFilters, function(name, filterValues) {
+                   // filter each .webinar element
+                   $filteredResults = $filteredResults.filter(function() {
+                       let matched = false,
+                           currentFilterValues = $(this).data('category').split(' ');
+
+
+                       // loop over each category value in the current .webinar's data-category
+                       $.each(currentFilterValues, function(_, currentFilterValue) {
+                          
+                           // if the current category exists in the selected filters array
+                           // set matched to true, and stop looping. as we're ORing in each
+                           // set of filters, we only need to match once
+
+                           if ($.inArray(currentFilterValue, filterValues) !== -1) {
+                               matched = true;
+                               return false;
+                           }
+                       });
+
+                       // if matched is true the current .webinar element is returned
+                       return matched;
+                   });
+               });
+
+               $webinar.hide().filter($filteredResults).fadeIn(300);
+               addCounter().delay(500);
+               $table.trigger('applyWidgets');
+               $(".webinar:visible").length === 0 ? $noResults.fadeIn(500) : $noResults.hide();
+               return false;
+           }
+           else {
+               $webinar.hide();
+               $makeSelection.fadeIn(500);
+           }
+       });
+   });</code></pre>
+          <figcaption>Here is the script that allows the content to be filter by multiple checkboxes from various groups. I adapted it from this <a href="https://stackoverflow.com/questions/35011034/jquery-filtering-with-multiple-checkboxes">StackOverflow question</a>.</figcaption>
+        </figure>
+        <p>The function then loops over all the items in the list and reads the data categories and splits them. For each item another loop is run on the split data categories and they are checked to see if they match up with user selected items. If there is a match the item is flagged as true. Once the loops have run the function returns all those that have been matched.</p>
         <p>Lastly, I needed to make the columns sortable. During my research I came across <a href="https://mottie.github.io/tablesorter/docs/">tablesorter.js</a> and decided it was a good fit for this project. It appeared to be a simple plugin to do what I needed it. I read through the Docs and implemented to fit my needs. </p>
       </section>
       <section> 
         <h2>Final Product</h2>
-        <p>The success of this project lent itself to be reused for indexing agroforestry-related Sustainable Agriculture Research Grants. A bit after this was implemented on our site and colleague asked if I could walk him through setting up a similar function on his site. </p>
+        <p>The success of this project lent itself to be reused for other projects. I was able to develop the indexing agroforestry-related <a href="https://www.fs.usda.gov/nac/resources/usda-programs/sare-agroforestry-grants/index.php">Sustainable Agriculture Research Grants</a> utilizing this same logic. A bit after this was implemented on our site and colleague asked if I could walk him through setting up a similar function on his site. </p>
         <p>The way the content was structured made the implementation to the new project quite simple. Huzzah, for reusable code! </p><a class="btn purple" href="https://www.fs.usda.gov/nac/multimedia/Webinar_Library/index.php">View website</a>
       </section>
     </section>
@@ -80,19 +209,21 @@
       <ul class="nav-btns">
         <li> <a href="./index.html#work">Work </a></li>
         <li> <a href="./about.html">About</a></li>
-        <li> <a href="./contact.html">Contact</a></li>
+        <li> <a href="./contact.php">Contact</a></li>
       </ul>
+      <div class="credits"><a href="./credits.html">Credits</a></div>
       <div class="copyright">
-        <p>&copy; 2018 Joseph Banegas. <br>All rights reserved.</p>
+        <p>&copy; 2019 Joseph Banegas. <br class="break">All rights reserved.</p>
       </div>
       <ul class="profiles">
         <li> <a href="https://github.com/bonez0607"><i class="fab fa-github"></i></a></li>
         <li><a href="https://stackoverflow.com/users/story/4881490"><i class="fab fa-stack-overflow"></i></a></li>
       </ul>
       <div class="contact"><i class="far fa-envelope"></i>
-        <p>Looking for someone who isn't afraid to get their hands dirty, solve annoying problems, and keep your clients happy? Then drop me a line: <a href="mailto:joebanegas@gmail.com"> Joebanegas@gmail.com</a></p>
+        <p>Looking for someone who isn't afraid to get their hands dirty, solve annoying problems, and keep your clients happy? Then <a href="./contact.php">drop me a line!</a></p>
       </div>
       <script src="js/main.js" type="text/javascript"></script>
+      <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"> </script>
     </footer>
   </body>
 </html>

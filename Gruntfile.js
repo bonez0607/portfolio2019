@@ -70,6 +70,26 @@ module.exports = function(grunt) {
                         } ]
       }
     },
+    postcss: {
+      options: {
+        map: true, // inline sourcemaps
+
+        // or
+        map: {
+            inline: false, // save all sourcemaps as separate files...
+            annotation: 'dist/css/maps/' // ...to the specified directory
+        },
+
+        processors: [
+          require('pixrem')(), // add fallbacks for rem units
+          require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+          //require('cssnano')() // minify the result
+        ]
+      },
+      dist: {
+        src: './dist/css/*.css'
+      }
+    },
     sass: {
         options: {
             implementation: sass,
@@ -94,6 +114,14 @@ module.exports = function(grunt) {
         target: ['src/scss/**/*.scss']
       }
     },
+    spell: {
+    all: {
+        src: ['dist/*'],
+        options: {
+          lang: 'en',
+        }
+      }
+    },
     watch: {
         css:{
           files: 'src/scss/**/*.scss', 
@@ -112,7 +140,9 @@ module.exports = function(grunt) {
   grunt.registerTask('gsass', ['sass']);
   grunt.registerTask('gimagemin', ['imagemin']);
   grunt.registerTask('gimage_resize', ['image_resize']);
-  grunt.registerTask('sass-lint', ['sasslint'])
+  grunt.registerTask('sass-lint', ['sasslint']);
+  grunt.registerTask('spellcheck', ['spell']);
+  grunt.registerTask('gpostcss', ['postcss']);
 
 
   grunt.registerTask('watch-css', ['watch:css'])

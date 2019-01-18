@@ -1,155 +1,210 @@
 
-
-
-
-
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
-
-
-
-
-
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  	h1{
-		
-		font-size: 40vw;
-
+@media screen and (min-width: 320px) and (max-width: 700px) {
+	h1 {
+		font-size: 20vw;
 	}
 
-	h2{
-		font-size: ms(2);
-	}
-	nav {
-		font-size: ms(0);
-		height: 5vh;
-		.logo{
-	
-		}
-	}
+  h2.subtitle {
+    font-size: ms(3);
+    flex-basis: auto !important;
+  }
 
-	.intro{
-		font-size: 10vw;
-	}
+  .home.hero {
+      img {
+        position: relative;
+        grid-row: 1/-1;
+        grid-column-start: 1;
+        width: 180vw;
+        transform: translate(-15%, 0%);
+      }
+    }
 
-	.parallax{
-		top: 3vh !important;
-	}
+  .projects{
+    padding: 0;
 
-	.about {
-		blockquote{
-			display: none;
-		}
+    .project{
+      min-height: 75vw !important;
+    }
 
-	}
+    div {
+      flex-basis: 100%;
+    }
+ 
 
-	.content{
-		p, ul{
-			flex-grow: 1;
-		}
-	}
-  
+    .project:first-child{
+      margin-bottom: 0;
+    }
+
+  }
+
+#work{
+  margin-bottom: ms(6);
 }
 
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
+.half {
+    flex-flow: row wrap;
+    flex-grow: 1;
+  }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
- 	.intro{
-		font-size: 3vw;
-		&:after{
-			bottom: -50% !important;
+  .noodles{
+    display: none;
+    flex-flow: row wrap;
+    padding: 0;
+
+    ul{
+      margin: 0;
+      padding: 0;
+      li:last-child{
+        margin: 0;
+      }
+
+      li a {
+        grid-template-rows: 35px .05fr 1fr 1fr 25px;
+    
+        .image{
+          grid-column: 1/-1;
+          grid-row: -3/-1;
+          width: unset;
+        }
+        h4{
+          grid-column: 2/-1;
+          grid-row: 2/3;
+        }
+        p{
+          grid-column: 2/-2;
+          grid-row: 3/4;
+        }
+      }
+
+    }
+
+    .more-works{
+      margin:0;
+    }
+  }
+
+  .profiles{
+    display: none;
+  }
+
+  .order-2{
+    order: 2;
+  }
+
+	.half{
+
+      align-items: stretch;
+      flex-shrink: 1;
+      flex-grow: 1;
+
+    .design{
+      text-align: left;
+    }
+
+		div{
+			min-height: unset;
 		}
-	}
+  }
 
-	h1{
-		font-size: 30vw;
-	}
+  footer{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-row-gap: ms(0);
+    margin-bottom: ms(1);
 
-	.about {
-		blockquote{
-			display: none !important;
-		}
+    li{
+      margin: ms(0) 0 0 0;
+    }
+    .nav-btns{
+      grid-row: 1/2 !important;
+      grid-column: 1/-1 !important;
+      justify-content: space-between !important;
+      align-self: center;
+    }
 
-	}
-	.content{
-		p, ul{
-			flex-grow: 1;
-		}
-	}
-  
+    .logo, .profiles{
+      display: none;
+    }
+
+    .contact{
+      grid-column: 1/-1;
+      grid-row:2/3;
+        p, a{
+          font-size: 3vw;
+          line-height: 1.1em;
+          flex-grow: 1;
+        }
+    }
+
+    .credits{
+      grid-column: 1/2;
+      grid-row: -1/-2;
+      align-self: center;
+      justify-self: start;
+    }
+
+    .copyright{
+      grid-column: 1/-1;
+      grid-row:-1/-2;
+      align-self: center;
+      br{
+        display: none;
+      }
+      p{
+        font-size: 3vw;
+        line-height: 1.1em;
+      }
+    }
+
+  }
+
+section:not(.home){
+  width: 90vw;
+  margin: 0 auto;
 }
 
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-  
-  	.intro{
-		font-size: 5vw;
-		&:after{
-			bottom: -30% !important;
-		}
-	}
-
-	h1{
-		font-size: 30vw;
-	}
-
-	.about {
-		blockquote{
-			display: none !important;
-		}
-
-	}
-	.content{
-		p, ul{
-			flex-grow: 1;
-		}
-	}
+body{
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
+footer, nav, .project-pages section.copy{
+  width: 100%;
+  padding: ms(0);
+  h2 {
+    font-size: 10vw;
+  }
+}
 
-@media (min-width: 320px) and (max-width: 480px) {
-  
-  	.intro{
-		font-size: 7vw;
-		&:after{
-			bottom: -25% !important;
-		}
-	}
+#map{
+  display:none;
+}
 
-	h1{
-		font-size: 30vw;
-	}
 
-	.about {
-		blockquote{
-			display: none !important;
-		}
+.project-pages  {
+    .hero h1{
+      font-size: 15vw;
+    }
 
-	}
-	.content{
-		p, ul{
-			flex-grow: 1;
-		}
-	}
-  
+    .hero img, .hero svg{
+      grid-row: 1/-1;
+      grid-column: 1/-1;
+      //opacity: .75;
+      z-index: -1;
+      align-self: center;
+      filter: brightness(90%);
+  }
+}
+
+
+blockquote.left, blockquote.right{
+  width: 100%;
+  margin: 0 !important;
+  float:unset;
+}
+
+
+
+
+
 }

@@ -1,6 +1,9 @@
 #ignore Node_Modules
 node_modules/
 
+#ignor PSD
+PSD/
+
 #ignore DS_Store
 .DS_Store
 

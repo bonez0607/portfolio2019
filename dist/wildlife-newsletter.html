@@ -2,6 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="follow">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="copyright" content="Joseph Banegas">
+    <meta name="author" content="Joseph Banegas">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/regular.css" integrity="sha384-aubIA90W7NxJ+Ly4QHAqo1JBSwQ0jejV75iHhj59KRwVjLVHjuhS3LkDAoa/ltO4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous">
@@ -19,7 +24,7 @@
           <li class="logo"> <a href="./index.html">Joe Banegas</a></li>
           <li> <a href="./index.html#work">Work </a></li>
           <li> <a href="./about.html">About</a></li>
-          <li> <a href="./contact.html">Contact</a></li>
+          <li> <a href="./contact.php">Contact</a></li>
         </ul>
         <ul class="profiles">
           <li> <a href="https://github.com/bonez0607"><i class="fab fa-github"></i></a></li>
@@ -55,33 +60,50 @@
       <section>
         <h2>The Journey</h2>
         <p>I knew I wanted to use the footer image of the website as the anchor of the image. From there I found a number of stock wildlife silhouettes and placed them together in Adobe Illustrator sort of like a puzzle.</p>
+        <figure><img class="width-focus" src="./final-products/wildlife-pub/nac-footer-img.gif">
+          <figcaption>This is our websites footer image. It is a sillhouette of a barn and silo and has been used on multiple elements by our center. I felt it would be a unique way add a bit of a branded touch to the image. </figcaption>
+        </figure>
         <p>I finally settled on two different designs for the cover and a dark/version for each and presented to the team and we settled on the hummingbird dominate Cover.</p>
-        <p>The layout for page four evolved upon thinking about the headline, “Payments for Ecosystem Services, Working Lands, and Agroforestry.” Naturally one thinks about money when discussing payments. I wanted to show money incorporated into the landscape in some way. This sentence resonated with me, “In recent years, payments for ecosystem services (PES) and ecosystem services markets (ESMs) for habitat are motivating landowners to manage their land for wildlife.” How can I visualise this? I settled on a quite literal interpretation of making the wildlife out of origami cranes and superimposed them on an image of agroforestry. </p>
+        <figure class="thirds">
+          <div><img src="./final-products/wildlife-pub/draft-cover-2.png"></div>
+          <div><img src="./final-products/wildlife-pub/draft-cover-1.png"></div>
+          <div><img src="./final-products/wildlife-pub/draft-cover-3.png"></div>
+          <figcaption>Some of the initial draft designs that I created to present to the team.</figcaption>
+        </figure>
+        <p>The layout for page four evolved upon thinking about the headline, “Payments for Ecosystem Services, Working Lands, and Agroforestry.” Naturally one thinks about money when discussing payments. I wanted to show money incorporated into the landscape in some way. This sentence resonated with me, “In recent years, payments for ecosystem services (PES) and ecosystem services markets (ESMs) for habitat are motivating landowners to manage their land for wildlife.” How can I visualize this? I settled on a quite literal interpretation of making the wildlife out of origami cranes and superimposed them on an image of agroforestry. </p>
+        <figure><img class="width-focus" src="./final-products/wildlife-pub/wildlife-mock2.png">
+          <figcaption>The layout for the "Payments for Ecosystem Services" article.</figcaption>
+        </figure>
         <p>The final spread of the newsletter needed to be two pages. I used much wider margins which allowed the text to span onto to a second page. I also knew that on the second page space would be needed for a sidebar.</p>
+        <figure><img class="width-focus" src="./final-products/wildlife-pub/wildlife-mock1.png">
+          <figcaption>The final spread of the newsletter.</figcaption>
+        </figure>
         <p>Looking across various methods to create aesthetically pleasing spacing I came across the golden ratio and it reminded me of an insects flight path. I thought this was a nice way to take the readers eye around the outside of the spread which would scan across different images of beneficial insects and ultimately land on the sidebar.</p>
       </section>
       <section>
         <h2>Final Product</h2>
-        <div class="image-thirds"><img src="./final-products/html-email/example-1.png"><img src="./final-products/html-email/example-2.png"></div>
+        <figure><img class="width-focus" src="./final-products/wildlife-pub/wildlife-cover.png"><img class="width-focus" src="./final-products/wildlife-pub/wildlife-mock2.png"><img class="width-focus" src="./final-products/wildlife-pub/wildlife-spread2.png"></figure>
       </section>
     </section>
     <footer><a class="logo" href="./index.html">Joe Banegas</a>
       <ul class="nav-btns">
         <li> <a href="./index.html#work">Work </a></li>
         <li> <a href="./about.html">About</a></li>
-        <li> <a href="./contact.html">Contact</a></li>
+        <li> <a href="./contact.php">Contact</a></li>
       </ul>
+      <div class="credits"><a href="./credits.html">Credits</a></div>
       <div class="copyright">
-        <p>&copy; 2018 Joseph Banegas. <br>All rights reserved.</p>
+        <p>&copy; 2019 Joseph Banegas. <br class="break">All rights reserved.</p>
       </div>
       <ul class="profiles">
         <li> <a href="https://github.com/bonez0607"><i class="fab fa-github"></i></a></li>
         <li><a href="https://stackoverflow.com/users/story/4881490"><i class="fab fa-stack-overflow"></i></a></li>
       </ul>
       <div class="contact"><i class="far fa-envelope"></i>
-        <p>Looking for someone who isn't afraid to get their hands dirty, solve annoying problems, and keep your clients happy? Then drop me a line: <a href="mailto:joebanegas@gmail.com"> Joebanegas@gmail.com</a></p>
+        <p>Looking for someone who isn't afraid to get their hands dirty, solve annoying problems, and keep your clients happy? Then <a href="./contact.php">drop me a line!</a></p>
       </div>
       <script src="js/main.js" type="text/javascript"></script>
+      <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"> </script>
     </footer>
   </body>
 </html>

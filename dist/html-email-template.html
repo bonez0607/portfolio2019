@@ -2,16 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="follow">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="copyright" content="Joseph Banegas">
+    <meta name="author" content="Joseph Banegas">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/regular.css" integrity="sha384-aubIA90W7NxJ+Ly4QHAqo1JBSwQ0jejV75iHhj59KRwVjLVHjuhS3LkDAoa/ltO4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
   </head>
-  <title>Joseph Banegas' Portfolio - HTML email template</title>
-  <meta name="author" content="name">
-  <meta name="description" content="Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE">
-  <meta name="keywords" content="design, photographer, front-end developer, web">
-  <link href="./final-products/interactive-map/css/map.css" rel="stylesheet">
+  <title>HTML email template | Joseph Banegas' Portfolio</title>
+  <meta name="description" content=" We decided on an e-newsletter that would go out quarterly. In each issue we would feature some of the latest publications, some events, and then a section titles “more to explore” which would provide helpful agroforestry-related links to the reader. This is the process">
+  <meta name="keywords" content="emaail, html, design, front-end developer, web, joe banegas, joseph banegas, banegas, benegas, bangas, banagas">
   <body class="project-pages">
     <section class="hero">
       <nav>
@@ -19,7 +22,7 @@
           <li class="logo"> <a href="./index.html">Joe Banegas</a></li>
           <li> <a href="./index.html#work">Work </a></li>
           <li> <a href="./about.html">About</a></li>
-          <li> <a href="./contact.html">Contact</a></li>
+          <li> <a href="./contact.php">Contact</a></li>
         </ul>
         <ul class="profiles">
           <li> <a href="https://github.com/bonez0607"><i class="fab fa-github"></i></a></li>
@@ -53,7 +56,7 @@
       <section>
         <h2>Research </h2>
         <p>I looked at various inspiration sites at how other companies handled their newsletter. We looked through several of MailChimp’s ready made templates, but nothing was quite jumping out as the right solution. </p>
-        <p>I explored the “code your own” and read through the docs of how to implement MailChimp’s templating language to create your own. </p>
+        <p>I explored the “code your own” and read through the docs of how to implement MailChimp’s template language to create your own. </p>
         <p>I explored html email best practices. The research exposed that HTML emails showed be coded differently than you’d code a website. To ensure consistency you should use ‘tables’ instead of ‘divs’. </p>
       </section>
       <section>
@@ -61,16 +64,19 @@
         <p>We had quite a few meetings with our team to establish what we were really wanting out of this. Would it be an extension of our print newsletter? Was it going to be story driven? How and who was going to maintain this and ensure it gets out? How often should we send it? </p>
         <p>We decided on an e-newsletter that would go out quarterly. In each issue we would feature some of the latest publications, some events, and then a section titles “more to explore” which would provide helpful agroforestry-related links to the reader. </p>
         <p>After conducting some of the initial research I did a couple of quick common email template layouts and presented them to the team. We settled on a simple 3X3 grid. For each edition of the e-newsletter we would incorporate three newly released or relevant publications, three agroforestry-related events and three items for a “more to explore” section. </p>
-        <p>I then went to Photoshop to design a couple of mockups to present the team. We picked one and I began to code the final product. </p>
-        <figure><img src="./final-products/html-email/mailchimp-full.jpg">
-          <figcaption>One of the initial mock-ups laid out for the team.</figcaption>
+        <p>I then went to Photoshop to design a couple of mock-ups to present the team. We picked one and I began to code the final product. </p>
+        <figure class="thirds">
+          <div><img src="./final-products/html-email/mockup-1.png"></div>
+          <div><img src="./final-products/html-email/mockup-2.png"></div>
+          <div><img src="./final-products/html-email/mailchimp-full.jpg"></div>
+          <figcaption>Three of the initial mock-ups laid out for the team.</figcaption>
         </figure>
         <p>Upon testing the final product by sending it to some selected individuals we found that some changes needed to be made. One was the background color needed be lightened. It was found that when the user attempted forwarded the email in outlook - outlook preserved the background color and when the user typed the message it would require them to change the font color in order to provide sufficient contrast. </p>
-        <figure><img src="./final-products/html-email/text-dark-bkg.jpg">
-          <figcaption>Demonstration of text/background contrast on the inital background when forwarding email to others.</figcaption>
+        <figure><img class="width-focus" src="./final-products/html-email/text-dark-bkg.jpg">
+          <figcaption>During testing it was found that the contrast on the initial background with the default mail client font color made for a bad experience. This resulted in adapting the background to a lighter color.</figcaption>
         </figure>
         <p>Another item that was adapted was when people received a forwarded email it wasn’t clear where they could subscribe to receive the newsletter themselves. We created a subscribe button to the top right corner of the newsletter. We tried various colors for the button and settled on the bright green background for the button. </p>
-        <figure><img src="./final-products/html-email/icons.jpg">
+        <figure><img class="width-focus" src="./final-products/html-email/icons.jpg">
           <figcaption>Reusable icons I developed in Illustrator for the 'More To Explore' section. </figcaption>
         </figure>
         <p>Since the initial launch we’ve made some updates. The “more to explore” section, is now composed of reusable icons rather than images as we found not every link had an image that went with it. </p>
@@ -78,26 +84,28 @@
       </section>
       <section>
         <h2>Final Product</h2>
-        <div class="image-thirds"><img src="./final-products/html-email/example-1.png"><img src="./final-products/html-email/example-2.png"></div>
+        <div class="image-thirds"><img class="width-focus" src="./final-products/html-email/example-1.png"><img class="width-focus" src="./final-products/html-email/example-2.png"></div>
       </section>
     </section>
     <footer><a class="logo" href="./index.html">Joe Banegas</a>
       <ul class="nav-btns">
         <li> <a href="./index.html#work">Work </a></li>
         <li> <a href="./about.html">About</a></li>
-        <li> <a href="./contact.html">Contact</a></li>
+        <li> <a href="./contact.php">Contact</a></li>
       </ul>
+      <div class="credits"><a href="./credits.html">Credits</a></div>
       <div class="copyright">
-        <p>&copy; 2018 Joseph Banegas. <br>All rights reserved.</p>
+        <p>&copy; 2019 Joseph Banegas. <br class="break">All rights reserved.</p>
       </div>
       <ul class="profiles">
         <li> <a href="https://github.com/bonez0607"><i class="fab fa-github"></i></a></li>
         <li><a href="https://stackoverflow.com/users/story/4881490"><i class="fab fa-stack-overflow"></i></a></li>
       </ul>
       <div class="contact"><i class="far fa-envelope"></i>
-        <p>Looking for someone who isn't afraid to get their hands dirty, solve annoying problems, and keep your clients happy? Then drop me a line: <a href="mailto:joebanegas@gmail.com"> Joebanegas@gmail.com</a></p>
+        <p>Looking for someone who isn't afraid to get their hands dirty, solve annoying problems, and keep your clients happy? Then <a href="./contact.php">drop me a line!</a></p>
       </div>
       <script src="js/main.js" type="text/javascript"></script>
+      <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"> </script>
     </footer>
   </body>
 </html>
