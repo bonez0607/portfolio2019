@@ -56,8 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
 } 
- 
-
 ?>
 
 
@@ -65,19 +63,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/regular.css" integrity="sha384-aubIA90W7NxJ+Ly4QHAqo1JBSwQ0jejV75iHhj59KRwVjLVHjuhS3LkDAoa/ltO4" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
+    <title>Contact Me| Joseph Banegas' Portfolio</title>
+    <?php include("./includes/head.html") ?>
+    <meta name='description', content=' We decided on an e-newsletter that would go out quarterly. In each issue we would feature some of the latest publications, some events, and then a section titles “more to explore” which would provide helpful agroforestry-related links to the reader. This is the process'/>
+    <meta name='keywords', content='emaail, html, design, front-end developer, web, joe banegas, joseph banegas, banegas, benegas, bangas, banagas'/>
 
-  <title>Contact Me| Joseph Banegas' Portfolio</title>
-  <meta name="author" content="name">
-  <meta name="description" content="Joseph Banegas is a designer, front-end developer, and photographer based in Lincoln, NE">
-  <meta name="keywords" content="design, photographer, front-end developer, web">
+
+
  </head>
   <body class="project-pages contact">
-    <img src="./assets/images/hero-contact.png" />
+    <img id="hero-contact" src="./assets/images/hero-contact.png" />
     <section class="hero">
 
       <?php include("./includes/nav-bar.html") ?>

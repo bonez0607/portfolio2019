@@ -1,5 +1,5 @@
 
-@media screen and (min-width: 320px) and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 	h1 {
 		font-size: 20vw;
 	}
@@ -134,7 +134,13 @@
           line-height: 1.1em;
           flex-grow: 1;
         }
+
+
     }
+
+    #hero-contact {
+    width: 300vw !important;
+}
 
     .credits{
       grid-column: 1/2;
@@ -189,10 +195,20 @@ footer, nav, .project-pages section.copy{
     .hero img, .hero svg{
       grid-row: 1/-1;
       grid-column: 1/-1;
-      //opacity: .75;
       z-index: -1;
       align-self: center;
       filter: brightness(90%);
+  }
+
+    &.contact #hero-contact {
+      display: block !important;
+      position: absolute !important;
+      width: 250vw !important;
+    }
+  
+   .hero img.headshot{
+      grid-column: 1/-1;
+      width: 100vw;
   }
 }
 
