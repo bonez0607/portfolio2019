@@ -83,11 +83,12 @@ module.exports = function(grunt) {
         processors: [
           require('pixrem')(), // add fallbacks for rem units
           require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
-          //require('cssnano')() // minify the result
+          require('cssnano')() // minify the result
         ]
       },
       dist: {
-        src: './dist/css/*.css'
+        src: './dist/css/*.css',
+        dest: './dist/css/main.css'
       }
     },
     sass: {
@@ -98,8 +99,6 @@ module.exports = function(grunt) {
         dist: {
             files: {
                 'dist/css/main.css': 'src/scss/main.scss',
-                'dist/mobile/css/main.css': 'src/scss/mobile/main.scss'
-
             }
         }
     },
@@ -136,17 +135,19 @@ module.exports = function(grunt) {
   });
 
 
-  grunt.registerTask('gpug', ['pug']);
+  grunt.registerTask('default', ['pug']);
   grunt.registerTask('gsass', ['sass']);
   grunt.registerTask('gimagemin', ['imagemin']);
   grunt.registerTask('gimage_resize', ['image_resize']);
   grunt.registerTask('sass-lint', ['sasslint']);
   grunt.registerTask('spellcheck', ['spell']);
-  grunt.registerTask('gpostcss', ['postcss']);
+  grunt.registerTask('default', ['postcss']);
 
 
   grunt.registerTask('watch-css', ['watch:css'])
   grunt.registerTask('watch-pug', ['watch:pug'])
+
+  grunt.registerTask('css', ['sass', 'postcss'])
   grunt.registerTask('default', ['jshint']);
 
 

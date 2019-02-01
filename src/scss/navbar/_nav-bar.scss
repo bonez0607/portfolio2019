@@ -33,7 +33,6 @@ nav{
 		text-decoration: none;
 		li{
 			flex-shrink: 0;
-			margin-right: ms(-1);
 		}
 
 		li a{
@@ -41,7 +40,7 @@ nav{
 		}
 
 		&.nav-btns{
-			flex-basis: 35%;
+			flex-basis: 55%;
 			font-size: ms(-1);
 		}
 

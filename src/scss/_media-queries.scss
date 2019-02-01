@@ -1,5 +1,12 @@
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 599px) {
+  .first-name{
+    text-shadow: 0 0 5px rgba(black, .5);
+  }
+
+  nav{
+    display: none;
+  }
 	h1 {
 		font-size: 20vw;
 	}
@@ -130,7 +137,7 @@
       grid-column: 1/-1;
       grid-row:2/3;
         p, a{
-          font-size: 3vw;
+          font-size: ms(0);
           line-height: 1.1em;
           flex-grow: 1;
         }
