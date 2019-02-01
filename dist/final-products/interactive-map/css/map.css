@@ -1,7 +1,13 @@
 /* Practices Map CSS */
 /* By Joe Banegos, 11/29/2016 */
 
+#map {
+  position: relative;
+  margin-bottom: 3em;
+}
+
 #map ul:first-child {
+  position: relative;
   text-align: center;
   list-style: none; }
 
@@ -28,10 +34,13 @@ a:focus {
     outline: none; }
 #united-states .legend {
     position: relative;
-    font-size: 1.15em;
+    font-size: 1em;
     left: 40px;
     line-height: 2.15em;
     top: -105px; }
+#united-states .legend:last-child{
+  margin-top: -5px;
+}
 
 legend {
   position: relative;
@@ -92,7 +101,7 @@ input[type=radio] {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   background: #FFFFFF;
   background: rgba(255, 255, 255, 0.95);
-  z-index: 10;
+  z-index: 9999;
   text-align: center; }
   .infobox_title {
     position: relative;
@@ -105,6 +114,9 @@ input[type=radio] {
     box-shadow: 0 0 5px #BABABA;
     box-sizing: border-box;
     text-align: left; }
+  .infobox_title h1 {
+    font-size: 1.35em;
+  }
   .infobox_body {
     position: relative;
     padding: 0 0 0 10px;
@@ -134,6 +146,15 @@ input[type=radio] {
 .listedPractice {
   display: block;
   margin: 15px 0 25px 40px; }
+
+.offeredPractice p strong, .notOfferedPractice p strong{
+  font-weight: 300;
+}
+
+.offeredPractice p, .notOfferedPractice p{
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
 
 .offeredPractice span {
   color: #407740; }
@@ -181,7 +202,7 @@ input[type=radio] {
   cursor: pointer; }
   .trigger:hover, .trigger:focus {
     outline: thin solid;
-    color: white;
+    color: white !important;
     background-color: #006699;
     border-color: #006699;
     transition: all, 0.1s, ease-in-out;
@@ -197,6 +218,10 @@ input[type=radio] {
   .trigger:hover, .trigger:focus {
     background-image: url("../images/external-link-hover.png");
     background-image: none, url("../images/external-link-hover.svg"); }
+
+    .external{
+      margin-left: 20px;
+    }
 
 /*
 |------------------

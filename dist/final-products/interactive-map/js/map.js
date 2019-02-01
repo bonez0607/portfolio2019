@@ -816,8 +816,8 @@ function openBox(evt) {
             $(".focus" + i).focus();
 // Info box location Variables
             var $map = $("#map"),
-                posx = state.getBBox().x - $map.offset().top * 0.2,
-                posy = state.getBBox().y + $map.offset().top * 0.8;
+                posx = state.getBBox().x //- $map.offset().top * 0.2,
+                posy = state.getBBox().y //+ $map.offset().top * 0.8;
 
 
 //Sets Link to NRCS
@@ -958,15 +958,15 @@ $.when(getPractices).done(function () {
 
 $('.practice-selection').on("mouseup keyup", function(evt) {
 if (evt.type === "mouseup" || evt.keyCode === 9) {
-    $(evt.target).closest('.practice-selection').addClass('active'); //This find closest target when you click
-   $("html, body").animate({scrollTop: $("#map").offset().top}, "slow"); //Scrolls down to map when practice is selected
+    //$(evt.target).closest('.practice-selection').addClass('active'); //This find closest target when you click
+   //$("html, body").animate({scrollTop: $("#map").offset().top}, "slow"); //Scrolls down to map when practice is selected
 }
 });
 
 $(document).on("mouseup keyup", function(evt){ //Here is when you click in your entire document
     if (evt.type === "mouseup" || evt.keyCode === 9) {
         if($(evt.target).closest('.practice-selection').length === 0) { // If click is not a practice
-        $('.practice-selection').removeClass('active'); //It removes this class existed from any practice
+        //$('.practice-selection').removeClass('active'); //It removes this class existed from any practice
         }
 }
 
