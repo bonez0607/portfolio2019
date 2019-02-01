@@ -8,10 +8,6 @@ html(lang="en-US")
     
     link(href="./final-products/interactive-map/css/map.css" rel="stylesheet")
 
-    script(src="./final-products/interactive-map/js/jquery-1.12.3.min.js" type="text/javascript")
-    script(src="./final-products/interactive-map/js/raphael-min.js" type="text/javascript")
-    script(src="./final-products/interactive-map/js/map.js" type="text/javascript")
-
     body.project-pages
         section.hero
             include ./includes/nav-bar.pug
@@ -134,4 +130,7 @@ html(lang="en-US")
                             span.external
                         button.infobox_close(aria-label='close', title='close')
                 a(href="https://www.fs.usda.gov/nac/practices" class="btn purple") View website
-        include ./includes/footer.pug  
+        include ./includes/footer.pug 
+        script(src="./final-products/interactive-map/js/jquery-1.12.3.min.js" type="text/javascript")
+        script(src="./final-products/interactive-map/js/raphael-min.js" type="text/javascript")
+        script(src="./final-products/interactive-map/js/map.js" type="text/javascript") 
