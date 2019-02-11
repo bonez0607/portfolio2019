@@ -4,7 +4,8 @@ const user = "jbanegas";
 const tag = "portfolio"
 const url = "https://cpv2api.com/pens/showcase/" + user;
 
-  
+console.log('test');
+
 function getPens(pens){
     const $penList = $(".noodles > ul");
 

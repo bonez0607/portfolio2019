@@ -10,6 +10,29 @@
 	}
 } 
 
+.attach-to-top{
+	position: fixed;
+	width: 80%;
+	z-index: 999;
+}
+
+.slide-down{
+	animation: 0.2s slideDown ease-out
+}
+
+.slide-up {
+		animation: 0.2s slideDown ease-out reverse;
+}
+
+@keyframes slideDown {
+	from{
+		transform: translateY(-100px);
+	}
+	to {
+		transform: translateY(0)
+	}
+}
+
 nav{
 	background-color: rgba($blue, .8);
 	font-size: ms(2);
