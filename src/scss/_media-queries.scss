@@ -5,7 +5,17 @@
   }
 
   nav{
-    display: none;
+    padding: 0 !important;
+    ul:first-child{
+      li:first-child{
+        display: none;
+      }
+      flex-grow: 1;
+      justify-content: space-around;
+    }
+    ul:nth-child(2){
+      display: none;
+    }
   }
 	h1 {
 		font-size: 20vw;
