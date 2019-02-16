@@ -32,8 +32,10 @@ function getPens(pens){
     })
 }
 
+$(document).ready(function(){
+    getPens(url);
+})
 
-getPens(url)
 
 
 
