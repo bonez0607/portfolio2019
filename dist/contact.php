@@ -72,10 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  </head>
   <body class="project-pages contact">
-    <img id="hero-contact" src="./assets/images/hero-contact.png" />
     <section class="hero">
-
       <?php include("./includes/nav-bar.html") ?>
+      <img id="hero-contact" src="./assets/images/hero-contact.png" />
       <h1>Contact <br>
         <div class="last-name">Me</div>
       </h1>
