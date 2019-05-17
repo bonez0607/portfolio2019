@@ -8,7 +8,14 @@ html{
 	background: $blue;
 	z-index: -1;
 	overflow-x: hidden;
+}
 
+img{
+	width: 100%;
+}
+
+body{
+	width: 80vw;
 	&:before {
 	    content: "";
 	    display: block;
@@ -22,14 +29,6 @@ html{
 	    opacity: .5;
 	    z-index: -1;
 	}
-}
-
-img{
-	width: 100%;
-}
-
-body{
-	width: 80vw;
 }
 
 
@@ -111,7 +110,7 @@ body{
 	}
 }
 
-@mixin webProjectTile($url, $color, $size){
+@mixin webProjectTile($url, $color, $size, $opacity:1 ){
 		position: relative;
 		&:before{
 			content: "";
@@ -134,6 +133,7 @@ body{
 			bottom: 0;
 			left: 0;
 			right: 0;
+			opacity: $opacity;
 			z-index: -2;
 			background-position: center top;
 			filter: saturate(75%);
@@ -171,23 +171,23 @@ body{
 	}
 
 	.two{
-		@include webProjectTile("../assets/web/webinar-library.png", $light-blue, cover);
+		@include webProjectTile("../assets/web/webinar-library-thumb.png", $purple, cover);
 	}
 
 	.three{
-		@include webProjectTile("../assets/web/html-email.png", $purple, contain);
+		@include webProjectTile("../assets/images/annual-report.png", $light-blue, cover, 0.85);
 	}
 
 	.af-notes{
-		@include webProjectTile("../final-products/af-notes/afnote-cover.png", $red, contain);
+		@include webProjectTile("../final-products/af-notes/afnote-cover-thumb.png", $red, contain);
 	}
 
 	.butterfly{
-		@include webProjectTile("../final-products/butterfly/butterfly-BW.png", $light-blue, cover);
+		@include webProjectTile("../final-products/butterfly/butterfly-BW-thumb.png", $light-blue, cover);
 	}
 
 	.wildlife{
-		@include webProjectTile("../final-products/wildlife-pub/wildlife-cover.png", $purple, contain);
+		@include webProjectTile("../final-products/wildlife-pub/wildlife-cover-thumb.png", $purple, contain);
 	}
 }
 

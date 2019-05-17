@@ -1,5 +1,8 @@
 #ignore Node_Modules
 node_modules/
+images/
+PSD/
+dist/
 
 #ignor PSD
 PSD/

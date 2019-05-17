@@ -58,11 +58,23 @@ table {
   background: red;
   position: absolute; }
 
+#submit:disabled {
+  background: #f1f1f1;
+  color: #101010;
+  border-bottom: #101010; }
+  #submit:disabled:hover {
+    color: #101010;
+    border-bottom: 2px solid transparent;
+    transition: all .3s ease-out;
+    border-bottom: #101010; }
+    #submit:disabled:hover:before {
+      display: none; }
+
 button.white, a.white {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   border-bottom: 2px solid #ffffff;
-  color: #ffffff !important;
+  color: #ffffff;
   cursor: pointer;
   display: block;
   font-size: 1.2rem;
@@ -98,7 +110,7 @@ button.white, a.white {
     border-left: 5px solid #ffffff;
     transform: translateX(10px); }
   button.white:hover, a.white:hover {
-    color: #ffffff !important;
+    color: #ffffff;
     border-bottom: 2px solid #fe9b00;
     transition: all .3s ease-out; }
     button.white:hover:before, a.white:hover:before {
@@ -109,7 +121,7 @@ button.btn.purple, a.btn.purple {
   background: rgba(31, 46, 152, 0.1);
   border: none;
   border-bottom: 2px solid #1f2e98;
-  color: #1f2e98 !important;
+  color: #1f2e98;
   cursor: pointer;
   display: block;
   font-size: 1.2rem;
@@ -145,7 +157,7 @@ button.btn.purple, a.btn.purple {
     border-left: 5px solid #1f2e98;
     transform: translateX(10px); }
   button.btn.purple:hover, a.btn.purple:hover {
-    color: #ffffff !important;
+    color: #ffffff;
     border-bottom: 2px solid #fe9b00;
     transition: all .3s ease-out; }
     button.btn.purple:hover:before, a.btn.purple:hover:before {
@@ -160,7 +172,13 @@ html {
   background: #192279;
   z-index: -1;
   overflow-x: hidden; }
-  html:before {
+
+img {
+  width: 100%; }
+
+body {
+  width: 80vw; }
+  body:before {
     content: "";
     display: block;
     position: fixed;
@@ -172,12 +190,6 @@ html {
     background-image: url("../assets/images/otis-redding.png");
     opacity: .5;
     z-index: -1; }
-
-img {
-  width: 100%; }
-
-body {
-  width: 80vw; }
 
 .project-pages .hero img.headshot {
   grid-column: 7/-1;
@@ -274,6 +286,7 @@ body {
       bottom: 0;
       left: 0;
       right: 0;
+      opacity: 1;
       z-index: -2;
       background-position: center top;
       filter: saturate(75%);
@@ -283,7 +296,7 @@ body {
     .half .two:before {
       content: "";
       display: block;
-      background-color: #0048b8;
+      background-color: #451386;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -293,13 +306,14 @@ body {
     .half .two:after {
       content: "";
       display: block;
-      background-image: url("../assets/web/webinar-library.png");
+      background-image: url("../assets/web/webinar-library-thumb.png");
       background-size: cover;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      opacity: 1;
       z-index: -2;
       background-position: center top;
       filter: saturate(75%);
@@ -309,7 +323,7 @@ body {
     .half .three:before {
       content: "";
       display: block;
-      background-color: #451386;
+      background-color: #0048b8;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -319,13 +333,14 @@ body {
     .half .three:after {
       content: "";
       display: block;
-      background-image: url("../assets/web/html-email.png");
-      background-size: contain;
+      background-image: url("../assets/images/annual-report.png");
+      background-size: cover;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      opacity: 0.85;
       z-index: -2;
       background-position: center top;
       filter: saturate(75%);
@@ -345,13 +360,14 @@ body {
     .half .af-notes:after {
       content: "";
       display: block;
-      background-image: url("../final-products/af-notes/afnote-cover.png");
+      background-image: url("../final-products/af-notes/afnote-cover-thumb.png");
       background-size: contain;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      opacity: 1;
       z-index: -2;
       background-position: center top;
       filter: saturate(75%);
@@ -371,13 +387,14 @@ body {
     .half .butterfly:after {
       content: "";
       display: block;
-      background-image: url("../final-products/butterfly/butterfly-BW.png");
+      background-image: url("../final-products/butterfly/butterfly-BW-thumb.png");
       background-size: cover;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      opacity: 1;
       z-index: -2;
       background-position: center top;
       filter: saturate(75%);
@@ -397,13 +414,14 @@ body {
     .half .wildlife:after {
       content: "";
       display: block;
-      background-image: url("../final-products/wildlife-pub/wildlife-cover.png");
+      background-image: url("../final-products/wildlife-pub/wildlife-cover-thumb.png");
       background-size: contain;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      opacity: 1;
       z-index: -2;
       background-position: center top;
       filter: saturate(75%);
