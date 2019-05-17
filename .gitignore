@@ -3,6 +3,7 @@ node_modules/
 images/
 PSD/
 dist/
+private/
 
 #ignor PSD
 PSD/

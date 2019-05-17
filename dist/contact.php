@@ -1,7 +1,6 @@
 <?
 
-$sitekey = "6LdDBZ0UAAAAABLWqzAQOkY01PnBaZ-dSaEDADwh";
-$secretkey = "6LdDBZ0UAAAAAGHEulcYJ26y7nySrjqDNNCjeX7n";
+require("private/keys.php");
 $statusmessage;
 
 if (isset($_POST["submit"])) {
